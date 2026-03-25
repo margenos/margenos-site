@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Margenos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(#0A0F1E, #111A2F);
+      color: white;
+      text-align: center;
+    }
+    .container {
+      padding: 80px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h1 {
+      font-size: 42px;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 18px;
+      color: #ccc;
+      margin-bottom: 30px;
+    }
+    .btn {
+      background: white;
+      color: black;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      margin-top: 60px;
+    }
+    .feature {
+      background: rgba(255,255,255,0.05);
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .footer {
+      margin-top: 80px;
+      font-size: 14px;
+      color: #777;
+    }
+    @media(min-width: 700px){
+      .features {
+        grid-template-columns: repeat(3,1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Find Profitable Walmart Products in Seconds</h1>
+  <p>Margenos helps resellers scan products, estimate demand, analyze competition, and make smarter buying decisions instantly.</p>
+  <a class="btn" href="#">Get Early Access</a>
+
+  <div class="features">
+    <div class="feature">
+      <h3>Profit Calculator</h3>
+      <p>See real profit before you buy.</p>
+    </div>
+    <div class="feature">
+      <h3>Demand Estimator</h3>
+      <p>Estimate monthly sales instantly.</p>
+    </div>
+    <div class="feature">
+      <h3>Competition Analysis</h3>
+      <p>Know if a product is worth it.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Margenos © 2026 | support@margenos.com</p>
+  </div>
+</div>
+
+</body>
+</html>
