@@ -3,9 +3,17 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Margenos — Know your margin before you buy</title>
-<meta name="description" content="Margenos is the Walmart Marketplace scanner for resellers: profit, fees, every seller, buy-box history and real sales signals — on your phone and in Chrome." />
-<meta property="og:title" content="Margenos — Know your margin before you buy" />
+<title>Walmart Seller Scanner App &amp; Profit Calculator | Margenos</title>
+<meta name="description" content="Walmart seller scanner app and Chrome extension for resellers. See profit after Walmart and WFS fees, sales estimates, sellers, stock and the buy box." />
+<meta name="keywords" content="walmart seller app, walmart scanner app, walmart reseller app, walmart arbitrage app, walmart online arbitrage tool, walmart profit calculator, walmart fee calculator, wfs fee calculator, walmart sales estimator, walmart buy box tracker, walmart seller chrome extension, wamp alternative" />
+<link rel="canonical" href="https://margenos.com/" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta property="og:title" content="Margenos — Walmart Seller Scanner App &amp; Chrome Extension" />
+<meta property="og:site_name" content="Margenos" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Margenos — Walmart Seller Scanner App &amp; Chrome Extension" />
+<meta name="twitter:description" content="True profit after every Walmart fee, sales estimates, sellers, stock and the buy box — on your phone and in Chrome." />
+<meta name="twitter:image" content="https://margenos.com/icon-512.png" />
 <meta property="og:description" content="Scan any product. See profit, fees, every seller and the buy box before you spend a dollar." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://margenos.com/" />
@@ -15,6 +23,8 @@
 <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 <meta property="og:image" content="https://margenos.com/icon-512.png" />
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Margenos","url":"https://margenos.com/","image":"https://margenos.com/icon-512.png","applicationCategory":"BusinessApplication","operatingSystem":"iOS, Android, Chrome","description":"Walmart seller scanner app and Chrome extension for Walmart Marketplace resellers: profit after Walmart and WFS fees, sales estimates, competing sellers, stock and buy box history.","offers":[{"@type":"Offer","name":"Pro","price":"24.99","priceCurrency":"USD","url":"https://margenos.com/#pricing"},{"@type":"Offer","name":"Plus","price":"34.99","priceCurrency":"USD","url":"https://margenos.com/#pricing"},{"@type":"Offer","name":"Elite","price":"44.99","priceCurrency":"USD","url":"https://margenos.com/#pricing"}],"publisher":{"@type":"Organization","name":"Margenos","url":"https://margenos.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Who is Margenos for?","acceptedAnswer":{"@type":"Answer","text":"Anyone building a business on Walmart Marketplace — from first-time resellers to high-volume sellers and teams. If you buy products to resell, Margenos shows you where the profit is before you spend."}},{"@type":"Question","name":"Where do the sales estimates come from?","acceptedAnswer":{"@type":"Answer","text":"From four sources, best first: Walmart's own \"sold\" badges on the listing, stock changes we've observed over time, how fast new reviews are arriving, and how comparable products sell. Estimates are shown with a likely range and the source they came from. When there's nothing reliable to base one on, Margenos says \"not enough data\" rather than guessing."}},{"@type":"Question","name":"How accurate are the fees?","acceptedAnswer":{"@type":"Answer","text":"Referral fees follow Walmart's published category rates, and WFS fulfillment and storage are calculated from the product's shipping weight. If the weight isn't known, we ask you for it rather than guessing."}},{"@type":"Question","name":"Does the Chrome extension do anything on its own?","acceptedAnswer":{"@type":"Answer","text":"No. It reads only the Walmart pages you open yourself. It never clicks, browses, or adds anything to a cart."}},{"@type":"Question","name":"Why do I only see variations in Chrome?","acceptedAnswer":{"@type":"Answer","text":"Variations come from the Walmart page itself. The extension reads the listing you have open in your own browser, so it can show them. The phone app can't read that page reliably, so variations are in the Chrome extension only."}},{"@type":"Question","name":"Is Margenos an alternative to WAMP?","acceptedAnswer":{"@type":"Answer","text":"Yes. Margenos covers the same Walmart sourcing job — profit, fees, sellers, stock, buy box and history — in a phone app and a Chrome extension on one account, with sales estimates that show their range and source. See how they compare."}},{"@type":"Question","name":"How many devices can I use?","acceptedAnswer":{"@type":"Answer","text":"As many as you like. Your scans are one allowance shared between the phone app and the extension."}},{"@type":"Question","name":"How does the free trial work?","acceptedAnswer":{"@type":"Answer","text":"Every plan starts with 14 days free. You'll add a card to start; nothing is charged until the trial ends, and you can cancel any time before then from your account."}},{"@type":"Question","name":"Can I change or cancel my plan?","acceptedAnswer":{"@type":"Answer","text":"Yes, anytime, from Manage subscription in the app or the extension. Yearly plans save 20% over paying monthly."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Margenos","url":"https://margenos.com/","logo":"https://margenos.com/icon-512.png"}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -74,10 +84,11 @@
   .hero::before { content: ''; position: absolute; inset: -30% -10% auto 40%; height: 700px;
     background: radial-gradient(closest-side, rgba(57,255,20,.13), transparent 70%); pointer-events: none; }
   .hero .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; position: relative; }
+  h1.eyebrow { font-size: 13px; line-height: 1.4; letter-spacing: 0; margin: 0 0 22px; font-weight: 700; }
   .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: var(--signal);
              background: var(--signal-dim); border: 1px solid rgba(57,255,20,.3); padding: 6px 12px; border-radius: 999px; margin-bottom: 22px; }
-  h1 { font-size: clamp(40px, 5.2vw, 68px); line-height: .98; letter-spacing: -2.6px; margin: 0 0 22px; font-weight: 900; }
-  h1 em, .grad { font-style: normal; background: linear-gradient(92deg, #39FF14 0%, #7CFFB2 45%, #A78BFA 100%);
+  h1, .h1 { font-size: clamp(40px, 5.2vw, 68px); line-height: .98; letter-spacing: -2.6px; margin: 0 0 22px; font-weight: 900; }
+  h1 em, .h1 em, .grad { font-style: normal; background: linear-gradient(92deg, #39FF14 0%, #7CFFB2 45%, #A78BFA 100%);
     -webkit-background-clip: text; background-clip: text; color: transparent; }
   /* Faint engineering grid behind the hero, fading out at the edges */
   .hero::after { content: ''; position: absolute; inset: 0; pointer-events: none;
@@ -283,7 +294,7 @@
     .chip3d { font-size: 11px; padding: 6px 10px; }
     .chip3d.c2 { right: 0; }
     .lede { font-size: 17px; }
-    h1 { letter-spacing: -1.6px; }
+    h1, .h1 { letter-spacing: -1.6px; }
     .stat { padding: 24px 16px; } .stat b { font-size: 34px; }
     .grid, .steps { grid-template-columns: 1fr; }
     section { padding: 68px 0; }
@@ -300,6 +311,7 @@
       <a href="#features">Features</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
+      <a href="/walmart-profit-calculator/">Profit calculator</a>
       <a class="btn primary sm" href="#download">Start free trial</a>
     </div>
   </div>
@@ -308,9 +320,9 @@
 <header class="hero" id="top">
   <div class="wrap">
     <div>
-      <div class="eyebrow">Profit intelligence for Walmart Marketplace</div>
-      <h1><span class="nw">Every product.</span><br /><em class="nw">Every margin.</em><br /><span class="nw">Instantly.</span></h1>
-      <p class="lede">Margenos turns any Walmart listing into a clear decision — true profit after every fee, estimated demand, the competition and the buy box — so your money only goes where it grows.</p>
+      <h1 class="eyebrow">Walmart seller scanner app &amp; Chrome extension</h1>
+      <p class="h1"><span class="nw">Every product.</span><br /><em class="nw">Every margin.</em><br /><span class="nw">Instantly.</span></p>
+      <p class="lede">Margenos is the Walmart reseller app that turns any listing into a clear decision — true profit after every Walmart and WFS fee, estimated sales, every competing seller and the buy box — so your money only goes where it grows.</p>
       <div class="cta-row">
         <a class="btn primary" href="#download">Start your free trial</a>
         <a class="btn ghost" href="#pricing">See pricing</a>
@@ -622,6 +634,7 @@
       <details><summary>How accurate are the fees?</summary><p>Referral fees follow Walmart's published category rates, and WFS fulfillment and storage are calculated from the product's shipping weight. If the weight isn't known, we ask you for it rather than guessing.</p></details>
       <details><summary>Does the Chrome extension do anything on its own?</summary><p>No. It reads only the Walmart pages you open yourself. It never clicks, browses, or adds anything to a cart.</p></details>
       <details><summary>Why do I only see variations in Chrome?</summary><p>Variations come from the Walmart page itself. The extension reads the listing you have open in your own browser, so it can show them. The phone app can't read that page reliably, so variations are in the Chrome extension only.</p></details>
+      <details><summary>Is Margenos an alternative to WAMP?</summary><p>Yes. Margenos covers the same Walmart sourcing job — profit, fees, sellers, stock, buy box and history — in a phone app and a Chrome extension on one account, with sales estimates that show their range and source. <a href="/wamp-alternative/">See how they compare</a>.</p></details>
       <details><summary>How many devices can I use?</summary><p>As many as you like. Your scans are one allowance shared between the phone app and the extension.</p></details>
       <details><summary>How does the free trial work?</summary><p>Every plan starts with 14 days free. You'll add a card to start; nothing is charged until the trial ends, and you can cancel any time before then from your account.</p></details>
       <details><summary>Can I change or cancel my plan?</summary><p>Yes, anytime, from Manage subscription in the app or the extension. Yearly plans save 20% over paying monthly.</p></details>
@@ -657,6 +670,10 @@
     <div class="links">
       <a href="#features">Features</a>
       <a href="#pricing">Pricing</a>
+      <a href="/walmart-profit-calculator/">Walmart profit calculator</a>
+      <a href="/walmart-scanner-app/">Walmart scanner app</a>
+      <a href="/walmart-chrome-extension/">Chrome extension</a>
+      <a href="/wamp-alternative/">WAMP alternative</a>
       <a href="https://margenos-production.up.railway.app/privacy">Privacy</a>
       <a href="https://margenos-production.up.railway.app/terms">Terms</a>
       <a href="mailto:support@margenos.com">support@margenos.com</a>
