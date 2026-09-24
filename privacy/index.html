@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en"><head>
+<link rel="icon" href="/favicon.ico">
+<link rel="canonical" href="https://margenos.com/privacy/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy · Margenos</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0;
+    background: #050A18; color: #E6EDFA;
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 40px 16px 80px; }
+  h1 { font-size: 30px; line-height: 1.2; margin: 0 0 6px; color: #F2F6FF; letter-spacing: -0.5px; }
+  .updated { color: #5C6B8C; font-size: 13px; margin: 0 0 32px; }
+  h2 {
+    font-size: 19px; margin: 36px 0 10px; color: #39FF14;
+    letter-spacing: -0.2px;
+  }
+  h3 { font-size: 15px; margin: 22px 0 6px; color: #F2F6FF; }
+  p, li { color: #C3CEE4; }
+  ul { padding-left: 20px; }
+  li { margin: 6px 0; }
+  a { color: #4DA6FF; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid rgba(255,255,255,0.09); vertical-align: top; }
+  th { color: #94A3C4; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.6px; }
+  .callout {
+    background: rgba(77,166,255,0.08); border: 1px solid rgba(77,166,255,0.25);
+    border-radius: 12px; padding: 14px 16px; margin: 18px 0;
+  }
+  .callout p { margin: 0; color: #DCE6F7; }
+  .nav { margin-top: 48px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.09); font-size: 14px; }
+  @media (prefers-color-scheme: light) {
+    body { background: #FFFFFF; color: #16202E; }
+    h1, h3 { color: #0B1220; }
+    h2 { color: #0E7C2E; }
+    p, li { color: #384457; }
+    th { color: #5B6B82; }
+    th, td { border-bottom-color: rgba(0,0,0,0.10); }
+    .callout { background: rgba(0,113,206,0.06); border-color: rgba(0,113,206,0.25); }
+    .callout p { color: #24374F; }
+    .nav { border-top-color: rgba(0,0,0,0.10); }
+  }
+</style>
+</head><body><div class="wrap">
+<h1>Privacy Policy</h1>
+<p class="updated">Last updated September 23, 2026</p>
+
+<p>Margenos is a product research tool for Walmart Marketplace sellers, operated by
+Lemont Holdings LLC ("we", "us"). This policy
+describes what the app collects, why, and who it is shared with. It is written to
+match what the software actually does.</p>
+
+<h2>What we collect</h2>
+
+<h3>Your account</h3>
+<table>
+  <tr><th>Data</th><th>Why</th></tr>
+  <tr><td>Email address</td><td>Sign-in and account recovery</td></tr>
+  <tr><td>First and last name</td><td>Shown in the app; optional</td></tr>
+  <tr><td>Subscription tier</td><td>Deciding what your plan includes</td></tr>
+  <tr><td>Monthly usage counts</td><td>Enforcing scan and lookup allowances</td></tr>
+</table>
+<p>Passwords are handled by Supabase Auth. We never see or store your password.</p>
+
+<h3>Your research</h3>
+<table>
+  <tr><th>Data</th><th>Why</th></tr>
+  <tr><td>Scan history — product, UPC, category, prices, your entered costs, profit and ROI figures</td><td>So you can look back at what you scanned</td></tr>
+  <tr><td>Saved products, their status and your notes</td><td>Your watch list</td></tr>
+</table>
+
+<h3>The browser extension</h3>
+<p>If you install the Margenos Chrome extension, it reads product data from
+Walmart pages <strong>you open yourself</strong> and sends it to us. Specifically:</p>
+<ul>
+  <li>Product details: item ID, UPC, title, brand, category, price, rating, review count</li>
+  <li>Walmart's sales badges, seller name, seller ID, offer counts and stock indicators</li>
+  <li><strong>The search terms you type into Walmart</strong>, and the position each result appeared in</li>
+</ul>
+
+<div class="callout">
+<p><strong>What the extension does not do.</strong> It runs only on walmart.com pages
+you have opened. It does not follow you to other websites, does not browse or click
+on its own, does not run in the background, and does not read your Walmart account
+details, addresses, payment methods or order history. It reads the product data
+already embedded in the page you are looking at.</p>
+</div>
+
+<h3>Photo search</h3>
+<p>If you use photo search, the image you take or choose is sent to Anthropic's
+Claude API to identify the product, then discarded. We do not keep your photos.</p>
+
+<h3>Google Sheets</h3>
+<p>If you connect a Google account for spreadsheet export, we store an access token
+for it. The permission requested is <code>drive.file</code>, which grants access
+<strong>only to files this app itself creates</strong>. Margenos cannot see, open or
+modify anything else in your Google Drive. You can disconnect at any time in
+Settings, which deletes the token and revokes our access with Google.</p>
+
+<h2>The shared data pool — please read this one</h2>
+
+<div class="callout">
+<p>Product observations — prices, sales badges, review counts, search rankings and
+search terms — go into a <strong>shared dataset</strong> used to estimate sales
+figures for every Margenos user, not just you. Your Walmart browsing makes the
+product better for other subscribers, and theirs makes it better for you. This is
+how the app produces sales estimates without charging for data feeds.</p>
+</div>
+
+<p>That pool records products, not people. It is not linked to your account, your
+name or your email, and nobody using Margenos can see that you were the person who
+viewed a given product. What it stores is "this item showed this badge at this price
+on this date", plus the search term that surfaced it.</p>
+
+<p>If you do not want your browsing to contribute, do not install the extension. The
+app works without it.</p>
+
+<h2>Support chat and support email</h2>
+<p>Margenos Help, the support chat on our website, in the extension and in the app,
+is an AI assistant. What you type is sent to our server and to Anthropic to write
+the answer. If you are signed in, the assistant can read your own plan, scan count
+and billing status to help you, and nothing about any other account. When it opens a
+ticket for a person, the conversation and the email you give are saved so we can reply.
+Replies to emails sent to support@margenos.com may be drafted by the same assistant; a person
+reviews each one before it is sent.</p>
+
+<h2>Who we share data with</h2>
+<table>
+  <tr><th>Service</th><th>What they receive</th></tr>
+  <tr><td>Supabase</td><td>Hosts the database and handles sign-in</td></tr>
+  <tr><td>Railway</td><td>Hosts the backend server</td></tr>
+  <tr><td>Anthropic</td><td>Photo-search images, for identification only; messages you send to Margenos Help (the support chat) and emails you send to support, to write the answers</td></tr>
+  <tr><td>Stripe</td><td>Your email and payment details when you subscribe; Stripe handles the card, we never see it</td></tr>
+  <tr><td>Google</td><td>Only if you connect Sheets export, and only files we create</td></tr>
+  <tr><td>Apify, Kompy</td><td>Product lookups by UPC or item ID — no personal data</td></tr>
+</table>
+<p>We do not sell your data, and we do not share it with advertisers.</p>
+
+<h2>Keeping and deleting data</h2>
+<p>Your scan history, saved products and account details are kept while your account
+is open. Email <a href="mailto:support@margenos.com">support@margenos.com</a> to delete your account and
+we will remove them.</p>
+<p>Anonymous product observations stay in the shared pool after an account closes,
+because they are records about Walmart listings rather than about you, and removing
+them would degrade the estimates other users depend on.</p>
+
+<h2>Your choices</h2>
+<ul>
+  <li>Uninstall the extension to stop contributing browsing data</li>
+  <li>Disconnect Google in Settings to revoke Drive access</li>
+  <li>Email us to export or delete your account data</li>
+</ul>
+
+<h2>Children</h2>
+<p>Margenos is a business tool and is not intended for anyone under 18. We do not
+knowingly collect data from children.</p>
+
+<h2>Changes</h2>
+<p>If this policy changes in a way that affects what we collect or who we share it
+with, we will say so in the app rather than only updating this page quietly.</p>
+
+<h2>Contact</h2>
+<p>Lemont Holdings LLC<br><a href="mailto:support@margenos.com">support@margenos.com</a></p>
+
+<div class="nav"><a href="/privacy/">Privacy Policy</a> &nbsp;·&nbsp; <a href="/terms/">Terms of Service</a><br>© 2026 Lemont Holdings LLC. Margenos is not affiliated with Walmart Inc.</div>
+</div></body></html>
