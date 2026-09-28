@@ -180,7 +180,7 @@
           return fail('That email already has an account. Log in from the Margenos extension instead.');
         }
         $('sentTo').textContent = em;
-        if (window.gtag) { try { window.gtag('event', 'sign_up', { method: 'email' }); } catch (_) {} }
+        if (window.gtag) { try { window.gtag('event', 'sign_up', { method: 'email' }); window.gtag('event', 'conversion', { send_to: 'AW-18477315728/oh6aCIqPu4cdEJDt1epE' }); } catch (_) {} }
         show('doneView');
       })
       .catch(function () {
