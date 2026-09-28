@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en"><head>
+<link rel="icon" href="/favicon.ico">
+<link rel="canonical" href="https://margenos.com/signup/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Create your account · Margenos</title>
+<meta name="description" content="Create your free Margenos account and start a 14-day free trial of the Walmart seller profit scanner for Chrome, iPhone and Android.">
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0;
+    background: #050A18; color: #E6EDFA;
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  .wrap { max-width: 480px; margin: 0 auto; padding: 40px 16px 80px; }
+  .brand { display: inline-flex; align-items: center; gap: 2px; color: #F2F6FF; font-weight: 800; letter-spacing: 1px; text-decoration: none; margin-bottom: 28px; }
+  .brand svg { width: 22px; height: 26px; }
+  h1 { font-size: 28px; line-height: 1.2; margin: 0 0 6px; color: #F2F6FF; letter-spacing: -0.5px; }
+  .sub { color: #94A3C4; margin: 0 0 26px; }
+  .card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); border-radius: 16px; padding: 22px 18px; }
+  label { display: block; font-size: 13px; font-weight: 700; color: #C3CEE4; margin: 14px 0 6px; }
+  .row { display: flex; gap: 10px; }
+  .row > div { flex: 1; min-width: 0; }
+  input[type=text], input[type=email], input[type=password] {
+    width: 100%; padding: 12px 13px; font-size: 16px; border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.16); background: rgba(0,0,0,0.25); color: inherit;
+  }
+  input:focus { outline: 2px solid #39FF14; outline-offset: 1px; }
+  .terms { display: flex; gap: 8px; align-items: flex-start; font-size: 13px; color: #94A3C4; margin-top: 16px; }
+  .terms input { margin-top: 3px; }
+  button {
+    width: 100%; margin-top: 20px; padding: 14px; font-size: 16px; font-weight: 800;
+    border: 0; border-radius: 12px; background: #39FF14; color: #04110A; cursor: pointer;
+  }
+  button[disabled] { opacity: .6; cursor: wait; }
+  .msg { margin-top: 14px; font-size: 14px; border-radius: 10px; padding: 10px 12px; display: none; }
+  .msg.err { display: block; background: rgba(255,80,80,0.12); color: #FFB3B3; border: 1px solid rgba(255,80,80,0.3); }
+  .fine { font-size: 13px; color: #5C6B8C; margin-top: 18px; text-align: center; }
+  a { color: #4DA6FF; }
+  .steps { counter-reset: s; list-style: none; padding: 0; margin: 18px 0 0; }
+  .steps li { counter-increment: s; position: relative; padding: 0 0 16px 40px; color: #C3CEE4; }
+  .steps li::before { content: counter(s); position: absolute; left: 0; top: 0; width: 28px; height: 28px; border-radius: 50%; background: rgba(57,255,20,0.14); color: #39FF14; font-weight: 800; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+  .steps b { color: #F2F6FF; }
+  .btn2 { display: block; text-align: center; margin-top: 8px; padding: 13px; border-radius: 12px; background: #39FF14; color: #04110A; font-weight: 800; text-decoration: none; }
+  .hidden { display: none; }
+  .foot { margin-top: 40px; font-size: 13px; color: #5C6B8C; text-align: center; }
+  @media (prefers-color-scheme: light) {
+    body { background: #FFFFFF; color: #16202E; }
+    h1, .brand, .steps b { color: #0B1220; }
+    .sub, .terms, label, .steps li { color: #384457; }
+    .card { background: #F6F8FC; border-color: rgba(0,0,0,0.08); }
+    input[type=text], input[type=email], input[type=password] { background: #fff; border-color: rgba(0,0,0,0.18); }
+    .steps li::before { color: #0E7C2E; background: rgba(14,124,46,0.1); }
+    .msg.err { color: #9B1C1C; }
+  }
+</style>
+</head><body><div class="wrap">
+<a class="brand" href="/" aria-label="Margenos home"><svg viewBox="282 227 460 534" aria-hidden="true"><path d="M335 708V420L512 586L689 280V708" fill="none" stroke="#39FF14" stroke-width="106" stroke-linecap="round" stroke-linejoin="round"/></svg>ARGENOS</a>
+
+<section id="formView">
+  <h1>Create your account</h1>
+  <p class="sub">Free for 14 days on any plan. One account works in the Chrome extension and the phone app.</p>
+  <form class="card" id="f" novalidate>
+    <div class="row">
+      <div><label for="fn">First name</label><input id="fn" type="text" autocomplete="given-name" required></div>
+      <div><label for="ln">Last name</label><input id="ln" type="text" autocomplete="family-name"></div>
+    </div>
+    <label for="em">Email</label>
+    <input id="em" type="email" autocomplete="email" inputmode="email" required>
+    <label for="pw">Password</label>
+    <input id="pw" type="password" autocomplete="new-password" minlength="8" required placeholder="At least 8 characters">
+    <div class="terms"><input id="ok" type="checkbox"><label for="ok" style="margin:0;font-weight:400;color:inherit">I agree to the <a href="/terms/" target="_blank">Terms</a> and <a href="/privacy/" target="_blank">Privacy Policy</a>.</label></div>
+    <button id="go" type="submit">Create free account</button>
+    <div class="msg" id="msg" role="alert"></div>
+  </form>
+  <p class="fine">Already have an account? Open the Margenos extension and log in.</p>
+</section>
+
+<section id="doneView" class="hidden">
+  <h1>Check your email</h1>
+  <p class="sub">We sent a confirmation link to <b id="sentTo"></b>. It can take a minute, so check spam too.</p>
+  <div class="card">
+    <ol class="steps">
+      <li><b>Confirm your email</b> by clicking the link we sent.</li>
+      <li><b>Add Margenos to Chrome</b>, then pin it from the puzzle-piece menu.
+        <a class="btn2" href="https://chromewebstore.google.com/detail/margenos-walmart-seller-t/pomkafoddncmlmpjaapaiaapcbpkdiee" target="_blank" rel="noopener">Add to Chrome</a></li>
+      <li><b>Log in</b>: click the Margenos icon and sign in with the email and password you just created. Your 14-day trial starts there.</li>
+    </ol>
+  </div>
+  <p class="fine">No email after 5 minutes? Write to <a href="mailto:support@margenos.com">support@margenos.com</a>.</p>
+</section>
+
+<section id="confirmedView" class="hidden">
+  <h1>Email confirmed</h1>
+  <p class="sub">Your account is ready. Two more steps:</p>
+  <div class="card">
+    <ol class="steps">
+      <li><b>Add Margenos to Chrome</b> if you haven't yet.
+        <a class="btn2" href="https://chromewebstore.google.com/detail/margenos-walmart-seller-t/pomkafoddncmlmpjaapaiaapcbpkdiee" target="_blank" rel="noopener">Add to Chrome</a></li>
+      <li><b>Log in</b>: click the Margenos icon in Chrome and sign in with your email and password.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="linkErrView" class="hidden">
+  <h1>That link didn't work</h1>
+  <p class="sub" id="linkErr">The confirmation link has expired or was already used.</p>
+  <div class="card"><p style="margin:0">If you already confirmed, just log in from the Margenos extension. Otherwise email <a href="mailto:support@margenos.com">support@margenos.com</a> and we'll sort it out.</p></div>
+</section>
+
+<div class="foot"><a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a><br>© 2026 Lemont Holdings LLC · Margenos is not affiliated with Walmart Inc.</div>
+</div>
+<script>
+(function () {
+  var SUPABASE_URL = 'https://cbxitqfoigfrtaqppsps.supabase.co';
+  // Public "anon" key — the same one shipped inside the app. It only allows what the database's row security permits.
+  var ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNieGl0cWZvaWdmcnRhcXBwc3BzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk2MTU0OTUsImV4cCI6MjEwNTE5MTQ5NX0.Tlo2nnxxXxCHRlRT0aGGlwtGWukab4wk3yWNKYFdIv4';
+  var REDIRECT = 'https://margenos.com/signup/?confirmed=1';
+  function $(id) { return document.getElementById(id); }
+  function show(id) { ['formView','doneView','confirmedView','linkErrView'].forEach(function (v) { $(v).classList.toggle('hidden', v !== id); }); window.scrollTo(0, 0); }
+
+  // Landing back from the confirmation email.
+  var hash = new URLSearchParams(location.hash.replace(/^#/, ''));
+  var query = new URLSearchParams(location.search);
+  if (hash.get('error') || query.get('error')) {
+    var d = hash.get('error_description') || query.get('error_description');
+    if (d) $('linkErr').textContent = d.replace(/\+/g, ' ') + '.';
+    show('linkErrView');
+  } else if (query.get('confirmed') || hash.get('access_token') || hash.get('type') === 'signup') {
+    if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+    show('confirmedView');
+  }
+
+  function fail(text) { var m = $('msg'); m.className = 'msg err'; m.textContent = text; }
+
+  $('f').addEventListener('submit', function (e) {
+    e.preventDefault();
+    $('msg').className = 'msg';
+    var fn = $('fn').value.trim(), ln = $('ln').value.trim();
+    var em = $('em').value.trim().toLowerCase(), pw = $('pw').value;
+    if (!fn) return fail('Enter your first name.');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) return fail('Enter a valid email address.');
+    if (pw.length < 8) return fail('Use a password with at least 8 characters.');
+    if (!$('ok').checked) return fail('Please agree to the Terms and Privacy Policy.');
+    var btn = $('go'); btn.disabled = true; btn.textContent = 'Creating your account…';
+    fetch(SUPABASE_URL + '/auth/v1/signup?redirect_to=' + encodeURIComponent(REDIRECT), {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'apikey': ANON, 'Authorization': 'Bearer ' + ANON },
+      body: JSON.stringify({ email: em, password: pw, data: { first_name: fn, last_name: ln } })
+    }).then(function (r) { return r.json().then(function (j) { return { ok: r.ok, status: r.status, j: j }; }); })
+      .then(function (res) {
+        btn.disabled = false; btn.textContent = 'Create free account';
+        var j = res.j || {};
+        var text = (j.msg || j.error_description || j.message || '').toString();
+        if (!res.ok) {
+          if (/already|registered|exists/i.test(text)) return fail('That email already has an account. Log in from the Margenos extension instead.');
+          if (/password/i.test(text)) return fail(text);
+          if (res.status === 429) return fail('Too many tries. Wait a minute and try again.');
+          return fail(text || 'Something went wrong. Try again, or email support@margenos.com.');
+        }
+        var user = j.user || j;
+        if (user && Array.isArray(user.identities) && user.identities.length === 0) {
+          return fail('That email already has an account. Log in from the Margenos extension instead.');
+        }
+        $('sentTo').textContent = em;
+        if (window.gtag) { try { window.gtag('event', 'sign_up', { method: 'email' }); } catch (_) {} }
+        show('doneView');
+      })
+      .catch(function () {
+        btn.disabled = false; btn.textContent = 'Create free account';
+        fail('Could not reach the server. Check your connection and try again.');
+      });
+  });
+})();
+</script>
+</body></html>
