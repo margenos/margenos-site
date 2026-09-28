@@ -137,6 +137,8 @@
   // Landing back from the confirmation email.
   var hash = new URLSearchParams(location.hash.replace(/^#/, ''));
   var query = new URLSearchParams(location.search);
+  // Opened by the extension right after install: it's already in Chrome, so hide the Add to Chrome buttons.
+  if (query.get('from') === 'extension') { document.querySelectorAll('.btn2').forEach(function (b) { b.style.display = 'none'; }); }
   if (hash.get('error') || query.get('error')) {
     var d = hash.get('error_description') || query.get('error_description');
     if (d) $('linkErr').textContent = d.replace(/\+/g, ' ') + '.';
