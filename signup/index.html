@@ -67,14 +67,32 @@
   .steps b { color: #F2F6FF; }
   .btn2 { display: block; text-align: center; margin-top: 8px; padding: 13px; border-radius: 12px; background: #39FF14; color: #04110A; font-weight: 800; text-decoration: none; }
   .hidden { display: none; }
-  .plans { display: grid; gap: 10px; margin-top: 4px; }
-  .plan { display: flex; align-items: center; gap: 12px; margin: 0; font-size: 15px; font-weight: 400; padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.14); cursor: pointer; }
-  .plan input { accent-color: #39FF14; width: 18px; height: 18px; margin: 0; }
-  .plan .pn { font-weight: 800; color: #F2F6FF; }
-  .plan .pd { font-size: 13px; color: #94A3C4; }
-  .plan .pp { margin-left: auto; font-weight: 800; color: #F2F6FF; white-space: nowrap; }
-  .plan .tag { font-size: 11px; font-weight: 800; color: #04110A; background: #39FF14; border-radius: 999px; padding: 2px 8px; margin-left: 6px; vertical-align: 2px; }
-  .plan:has(input:checked) { border-color: #39FF14; background: rgba(57,255,20,0.06); }
+  .wrap.wide { max-width: 1040px; }
+  .pgrid { display: grid; gap: 14px; }
+  @media (min-width: 860px) { .pgrid { grid-template-columns: repeat(3, 1fr); align-items: start; } }
+  .pcard { display: block; position: relative; margin: 0; padding: 20px 18px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.03); cursor: pointer; font-size: 14px; font-weight: 400; color: #C3CEE4; }
+  .pcard input { position: absolute; opacity: 0; pointer-events: none; }
+  .pcard:has(input:checked) { border: 2px solid #39FF14; padding: 19px 17px; background: rgba(57,255,20,0.05); }
+  .pcard:has(input:focus-visible) { outline: 2px solid #39FF14; outline-offset: 2px; }
+  .phead { display: flex; align-items: center; gap: 8px; }
+  .pn { font-size: 20px; font-weight: 800; color: #F2F6FF; }
+  .tag { font-size: 11px; font-weight: 800; color: #04110A; background: #39FF14; border-radius: 999px; padding: 2px 8px; }
+  .pfor { color: #94A3C4; margin-top: 2px; }
+  .pprice { margin-top: 10px; color: #94A3C4; }
+  .pprice b { font-size: 30px; color: #F2F6FF; letter-spacing: -0.5px; }
+  .pwhy { margin-top: 10px; padding: 10px 12px; border-radius: 10px; background: rgba(57,255,20,0.07); border: 1px solid rgba(57,255,20,0.2); }
+  .pwhy b { color: #F2F6FF; }
+  .pfeat { list-style: none; padding: 0; margin: 14px 0 0; display: grid; gap: 7px; }
+  .pfeat li { position: relative; padding-left: 22px; line-height: 1.45; }
+  .pfeat li::before { content: ""; position: absolute; left: 2px; top: 5px; width: 11px; height: 6px; border-left: 2px solid #39FF14; border-bottom: 2px solid #39FF14; transform: rotate(-45deg); }
+  .pfeat li.hi { color: #F2F6FF; font-weight: 700; }
+  .ppick { margin-top: 16px; text-align: center; padding: 10px; border-radius: 10px; font-weight: 800; border: 1px solid rgba(255,255,255,0.18); color: #F2F6FF; }
+  .ppick .on { display: none; }
+  .pcard:has(input:checked) .ppick { background: #39FF14; color: #04110A; border-color: #39FF14; }
+  .pcard:has(input:checked) .ppick .on { display: inline; }
+  .pcard:has(input:checked) .ppick .off { display: none; }
+  .pbar { margin: 16px auto 0; max-width: 480px; }
+  .pbar .today { margin-top: 0; padding-top: 0; border-top: 0; }
   .today { display: flex; justify-content: space-between; font-size: 14px; color: #C3CEE4; margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.09); }
   .today b { color: #39FF14; }
   .skip { display: block; text-align: center; margin-top: 14px; font-size: 14px; color: #94A3C4; }
@@ -87,12 +105,17 @@
     input[type=text], input[type=email], input[type=password] { background: #fff; border-color: rgba(0,0,0,0.18); }
     .steps li::before { color: #0E7C2E; background: rgba(14,124,46,0.1); }
     .msg.err { color: #9B1C1C; }
-    .plan { border-color: rgba(0,0,0,0.14); }
-    .plan .pn, .plan .pp { color: #0B1220; }
-    .plan .pd, .today, .skip { color: #384457; }
-    .plan:has(input:checked) { border-color: #0E7C2E; background: rgba(14,124,46,0.06); }
+    .today, .skip { color: #384457; }
     .today { border-top-color: rgba(0,0,0,0.08); }
     .today b { color: #0E7C2E; }
+    .pcard { background: #fff; border-color: rgba(0,0,0,0.12); color: #384457; }
+    .pcard:has(input:checked) { border-color: #0E7C2E; background: rgba(14,124,46,0.04); }
+    .pn, .pprice b, .pwhy b, .pfeat li.hi { color: #0B1220; }
+    .pfor, .pprice { color: #5A6578; }
+    .pwhy { background: rgba(14,124,46,0.06); border-color: rgba(14,124,46,0.22); }
+    .pfeat li::before { border-color: #0E7C2E; }
+    .ppick { color: #0B1220; border-color: rgba(0,0,0,0.18); }
+    .pcard:has(input:checked) .ppick { background: #0E7C2E; color: #fff; border-color: #0E7C2E; }
   }
 </style>
 </head><body><div class="wrap">
@@ -119,17 +142,43 @@
 
 <section id="planView" class="hidden">
   <h1>Start your free trial</h1>
-  <p class="sub" id="planSub">Your account is ready. Pick a plan — it's free for 14 days, and you can switch or cancel anytime.</p>
-  <form class="card" id="pf">
-    <div class="plans">
-      <label class="plan"><input type="radio" name="plan" value="pro"><span><span class="pn">Pro</span><br><span class="pd">2,000 scans a month</span></span><span class="pp">$24.99/mo</span></label>
-      <label class="plan"><input type="radio" name="plan" value="plus" checked><span><span class="pn">Plus<span class="tag">MOST POPULAR</span></span><br><span class="pd">10,000 scans · 300 storefront lookups</span></span><span class="pp">$34.99/mo</span></label>
-      <label class="plan"><input type="radio" name="plan" value="elite"><span><span class="pn">Elite</span><br><span class="pd">20,000 scans · photo search · CartIQ</span></span><span class="pp">$44.99/mo</span></label>
+  <p class="sub" id="planSub">Your account is ready. Pick a plan — every one is free for 14 days, and you can switch or cancel anytime.</p>
+  <form id="pf">
+    <div class="pgrid">
+      <label class="pcard">
+        <input type="radio" name="plan" value="pro">
+        <div class="phead"><span class="pn">Pro</span></div>
+        <div class="pfor">For getting started</div>
+        <div class="pprice"><b>$24.99</b> / month</div>
+        <div class="pwhy">Part-time sourcing. About <b>1.2¢ per scan</b> — one item that clears $25 profit covers the month.</div>
+        <ul class="pfeat"><li class="hi">2,000 scans a month (~60 a day)</li><li>Barcode scan, name search and listing lookup</li><li>Chrome extension (phone app soon)</li><li>Variations with price and stock (Chrome extension)</li><li>Use on all your devices</li><li>Monthly sales estimates</li><li>Profit, ROI, breakeven and max buy cost</li><li>Quantity, prep cost and WFS storage months in every calculation</li><li>Verified Walmart referral and WFS fees</li><li>Competing sellers — price, stock, WFS or SF</li><li>Buy-box breakdown: who usually wins it</li><li>Sold-out detection, with the sellers recently on the listing</li><li>Scan history and saved products</li><li>Price, buy-box and stock charts — up to a year of history</li><li>Push alerts: price moves, stock-outs, sellers joining or leaving</li><li>Slow-seller warnings</li><li>60 storefront lookups a month</li><li>CSV and unlimited Google Sheets exports</li></ul>
+        <div class="ppick"><span class="on">Selected</span><span class="off">Choose Pro</span></div>
+      </label>
+      <label class="pcard">
+        <input type="radio" name="plan" value="plus" checked>
+        <div class="phead"><span class="pn">Plus</span><span class="tag">MOST POPULAR</span></div>
+        <div class="pfor">For full-time sourcing</div>
+        <div class="pprice"><b>$34.99</b> / month</div>
+        <div class="pwhy">5× the scans of Pro for $10 more — about <b>0.35¢ per scan</b>. One solid flip a month pays for it.</div>
+        <ul class="pfeat"><li class="hi">10,000 scans a month (~330 a day)</li><li class="hi">300 storefront lookups a month</li><li>Barcode scan, name search and listing lookup</li><li>Chrome extension (phone app soon)</li><li>Variations with price and stock (Chrome extension)</li><li>Use on all your devices</li><li>Monthly sales estimates</li><li>Profit, ROI, breakeven and max buy cost</li><li>Quantity, prep cost and WFS storage months in every calculation</li><li>Verified Walmart referral and WFS fees</li><li>Competing sellers — price, stock, WFS or SF</li><li>Buy-box breakdown: who usually wins it</li><li>Sold-out detection, with the sellers recently on the listing</li><li>Scan history and saved products</li><li>Price, buy-box and stock charts — up to a year of history</li><li>Push alerts: price moves, stock-outs, sellers joining or leaving</li><li>Slow-seller warnings</li><li>CSV and unlimited Google Sheets exports</li></ul>
+        <div class="ppick"><span class="on">Selected</span><span class="off">Choose Plus</span></div>
+      </label>
+      <label class="pcard">
+        <input type="radio" name="plan" value="elite">
+        <div class="phead"><span class="pn">Elite</span></div>
+        <div class="pfor">For teams and high volume</div>
+        <div class="pprice"><b>$44.99</b> / month</div>
+        <div class="pwhy">Double Plus, plus photo search and CartIQ — about <b>0.22¢ per scan</b>, the lowest of any plan.</div>
+        <ul class="pfeat"><li class="hi">20,000 scans a month (~660 a day)</li><li class="hi">1,000 storefront lookups a month</li><li class="hi">Photo search — no barcode needed</li><li class="hi">CartIQ — your whole cart&#x27;s profit while you shop</li><li>Barcode scan, name search and listing lookup</li><li>Chrome extension (phone app soon)</li><li>Variations with price and stock (Chrome extension)</li><li>Use on all your devices</li><li>Monthly sales estimates</li><li>Profit, ROI, breakeven and max buy cost</li><li>Quantity, prep cost and WFS storage months in every calculation</li><li>Verified Walmart referral and WFS fees</li><li>Competing sellers — price, stock, WFS or SF</li><li>Buy-box breakdown: who usually wins it</li><li>Sold-out detection, with the sellers recently on the listing</li><li>Scan history and saved products</li><li>Price, buy-box and stock charts — up to a year of history</li><li>Push alerts: price moves, stock-outs, sellers joining or leaving</li><li>Slow-seller warnings</li><li>CSV and unlimited Google Sheets exports</li></ul>
+        <div class="ppick"><span class="on">Selected</span><span class="off">Choose Elite</span></div>
+      </label>
     </div>
-    <div class="today"><span>Due today</span><b>$0.00</b></div>
-    <button id="trialGo" type="submit">Start 14-day free trial</button>
-    <div class="msg" id="pmsg" role="alert"></div>
-    <p class="fine" style="margin-top:12px">Card required. You won't be charged until the trial ends, and you can cancel before then. Have a founding-member code? Enter it on the next page.</p>
+    <div class="card pbar">
+      <div class="today"><span>Due today</span><b>$0.00</b></div>
+      <button id="trialGo" type="submit">Start 14-day free trial of Plus</button>
+      <div class="msg" id="pmsg" role="alert"></div>
+      <p class="fine" style="margin-top:12px">Card required. You won't be charged until the trial ends, and you can cancel before then. Have a founding-member code? Enter it on the next page.</p>
+    </div>
   </form>
   <a class="skip" href="#" id="skipTrial">Skip for now — I'll start my trial in the extension</a>
 </section>
@@ -193,7 +242,7 @@
   function saveToken(t) { TOKEN = t || null; try { if (t) sessionStorage.setItem('mg_at', t); else sessionStorage.removeItem('mg_at'); } catch (_) {} }
   function loadToken() { try { return sessionStorage.getItem('mg_at'); } catch (_) { return null; } }
   function $(id) { return document.getElementById(id); }
-  function show(id) { ['formView','planView','doneView','confirmedView','readyView','linkErrView'].forEach(function (v) { $(v).classList.toggle('hidden', v !== id); }); window.scrollTo(0, 0); }
+  function show(id) { document.querySelector('.wrap').classList.toggle('wide', id === 'planView'); ['formView','planView','doneView','confirmedView','readyView','linkErrView'].forEach(function (v) { $(v).classList.toggle('hidden', v !== id); }); window.scrollTo(0, 0); }
 
   // Landing back from the confirmation email.
   var hash = new URLSearchParams(location.hash.replace(/^#/, ''));
@@ -258,6 +307,14 @@
       });
   });
 
+  var NAMES = { pro: 'Pro', plus: 'Plus', elite: 'Elite' };
+  function renderPlan() {
+    var picked = document.querySelector('input[name=plan]:checked');
+    $('trialGo').textContent = 'Start 14-day free trial of ' + NAMES[picked ? picked.value : 'plus'];
+  }
+  document.querySelectorAll('input[name=plan]').forEach(function (r) { r.addEventListener('change', renderPlan); });
+  renderPlan();
+
   function pfail(text) { var m = $('pmsg'); m.className = 'msg err'; m.textContent = text; }
   $('skipTrial').addEventListener('click', function (e) { e.preventDefault(); show('readyView'); });
   $('pf').addEventListener('submit', function (e) {
@@ -278,13 +335,13 @@
           location.href = res.j.url;
           return;
         }
-        btn.disabled = false; btn.textContent = 'Start 14-day free trial';
+        btn.disabled = false; renderPlan();
         if (res.status === 409) return show('readyView');
         if (res.status === 401) return pfail('Your sign-in expired. Log in from the Margenos extension to start your trial.');
         pfail(res.j.message || 'Checkout could not be started. Try again.');
       })
       .catch(function () {
-        btn.disabled = false; btn.textContent = 'Start 14-day free trial';
+        btn.disabled = false; renderPlan();
         pfail('Could not reach the server. Check your connection and try again.');
       });
   });
