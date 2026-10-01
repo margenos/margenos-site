@@ -9,6 +9,18 @@
 }(window, document, 'ttq');
 </script>
 <!-- TikTok Pixel Code End -->
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1595731518701591');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1595731518701591&ev=PageView&noscript=1"></noscript>
+<!-- End Meta Pixel Code -->
 <!-- Google tag (gtag.js) - Margenos Google Ads -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18477315728"></script>
 <script>
@@ -296,6 +308,7 @@
         }
         $('sentTo').textContent = em;
         if (window.gtag) { try { window.gtag('event', 'sign_up', { method: 'email' }); window.gtag('event', 'conversion', { send_to: 'AW-18477315728/YczbCKO6oosdEJDt1epE', value: 1.0, currency: 'USD' }); if (window.ttq) { window.ttq.track('CompleteRegistration'); } } catch (_) {} }
+        if (window.fbq) { try { window.fbq('track', 'CompleteRegistration'); } catch (_) {} }
         // With email confirmation off, Supabase signs the person in right away:
         // go straight to the trial step. Otherwise they confirm by email first.
         if (j.access_token) { saveToken(j.access_token); show('planView'); }
@@ -332,6 +345,7 @@
       .then(function (res) {
         if (res.j.success && res.j.url) {
           if (window.gtag) { try { window.gtag('event', 'begin_checkout', { items: [{ item_id: plan }] }); } catch (_) {} }
+          if (window.fbq) { try { window.fbq('track', 'InitiateCheckout', { content_name: plan }); } catch (_) {} }
           location.href = res.j.url;
           return;
         }

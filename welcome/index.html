@@ -9,6 +9,18 @@
 }(window, document, 'ttq');
 </script>
 <!-- TikTok Pixel Code End -->
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1595731518701591');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1595731518701591&ev=PageView&noscript=1"></noscript>
+<!-- End Meta Pixel Code -->
 <!-- Google tag (gtag.js) - Margenos Google Ads -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18477315728"></script>
 <script>
@@ -126,6 +138,7 @@
     window.gtag('event', 'begin_trial', { transaction_id: sid });
     if (TRIAL_SEND_TO) window.gtag('event', 'conversion', { send_to: TRIAL_SEND_TO, value: 30.0, currency: 'USD', transaction_id: sid });
     if (window.ttq) window.ttq.track('Subscribe');
+    if (window.fbq) window.fbq('track', 'StartTrial', { value: 0, currency: 'USD' }, { eventID: sid });
   } catch (_) {}
 })();
 </script>
