@@ -132,11 +132,11 @@ fbq('track', 'PageView');
   var sid = new URLSearchParams(location.search).get('session_id');
   try { sessionStorage.removeItem('mg_at'); } catch (_) {}
   // Google Ads "Trial start" conversion label. Empty = not set up yet; the page still works.
-  var TRIAL_SEND_TO = '';
+  var TRIAL_SEND_TO = 'AW-18477315728/HP6pCLm4upAdEJDt1epE';
   if (!sid || !window.gtag) return;
   try {
     window.gtag('event', 'begin_trial', { transaction_id: sid });
-    if (TRIAL_SEND_TO) window.gtag('event', 'conversion', { send_to: TRIAL_SEND_TO, value: 30.0, currency: 'USD', transaction_id: sid });
+    if (TRIAL_SEND_TO) window.gtag('event', 'conversion', { send_to: TRIAL_SEND_TO, value: 34.99, currency: 'USD', transaction_id: sid });
     if (window.ttq) window.ttq.track('Subscribe');
     if (window.fbq) window.fbq('track', 'StartTrial', { value: 0, currency: 'USD' }, { eventID: sid });
   } catch (_) {}
