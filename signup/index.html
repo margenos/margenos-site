@@ -146,7 +146,7 @@ fbq('track', 'PageView');
     <label for="pw">Password</label>
     <input id="pw" type="password" autocomplete="new-password" minlength="8" required placeholder="At least 8 characters">
     <div class="terms"><input id="ok" type="checkbox"><label for="ok" style="margin:0;font-weight:400;color:inherit">I agree to the <a href="/terms/" target="_blank">Terms</a> and <a href="/privacy/" target="_blank">Privacy Policy</a>.</label></div>
-    <button id="go" type="submit">Create free account</button>
+    <button id="go" type="submit">Start 14-day free trial</button>
     <div class="msg" id="msg" role="alert"></div>
   </form>
   <p class="fine">Already have an account? Open the Margenos extension and log in.</p>
@@ -293,7 +293,7 @@ fbq('track', 'PageView');
       body: JSON.stringify({ email: em, password: pw, data: { first_name: fn, last_name: ln } })
     }).then(function (r) { return r.json().then(function (j) { return { ok: r.ok, status: r.status, j: j }; }); })
       .then(function (res) {
-        btn.disabled = false; btn.textContent = 'Create free account';
+        btn.disabled = false; btn.textContent = 'Start 14-day free trial';
         var j = res.j || {};
         var text = (j.msg || j.error_description || j.message || '').toString();
         if (!res.ok) {
@@ -316,7 +316,7 @@ fbq('track', 'PageView');
         else { show('doneView'); }
       })
       .catch(function () {
-        btn.disabled = false; btn.textContent = 'Create free account';
+        btn.disabled = false; btn.textContent = 'Start 14-day free trial';
         fail('Could not reach the server. Check your connection and try again.');
       });
   });
