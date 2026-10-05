@@ -307,7 +307,8 @@ fbq('track', 'PageView');
           return fail('That email already has an account. Log in from the Margenos extension instead.');
         }
         $('sentTo').textContent = em;
-        if (window.gtag) { try { window.gtag('event', 'sign_up', { method: 'email' }); window.gtag('event', 'conversion', { send_to: 'AW-18477315728/YczbCKO6oosdEJDt1epE', value: 1.0, currency: 'USD' }); if (window.ttq) { window.ttq.track('CompleteRegistration'); } } catch (_) {} }
+        if (window.gtag) { try { window.gtag('event', 'sign_up', { method: 'email' }); window.gtag('event', 'conversion', { send_to: 'AW-18477315728/YczbCKO6oosdEJDt1epE', value: 1.0, currency: 'USD' }); } catch (_) {} }
+        if (window.ttq) { try { window.ttq.track('CompleteRegistration'); } catch (_) {} }
         if (window.fbq) { try { window.fbq('track', 'CompleteRegistration'); } catch (_) {} }
         // With email confirmation off, Supabase signs the person in right away:
         // go straight to the trial step. Otherwise they confirm by email first.
