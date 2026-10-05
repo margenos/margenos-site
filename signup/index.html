@@ -71,6 +71,10 @@ fbq('track', 'PageView');
   button[disabled] { opacity: .6; cursor: wait; }
   .msg { margin-top: 14px; font-size: 14px; border-radius: 10px; padding: 10px 12px; display: none; }
   .msg.err { display: block; background: rgba(255,80,80,0.12); color: #FFB3B3; border: 1px solid rgba(255,80,80,0.3); }
+  .founder { display:flex; gap:12px; align-items:center; background:#F1FFF0; border:2px solid #39FF14; border-radius:14px; padding:14px 16px; margin:0 0 20px; font-size:15px; line-height:1.45; color:#0B1B33; }
+  .founder .fbadge { flex:0 0 auto; background:#0B1B33; color:#39FF14; font-weight:800; font-size:11px; letter-spacing:.8px; padding:6px 9px; border-radius:8px; }
+  .founder code { background:#0B1B33; color:#39FF14; padding:2px 7px; border-radius:6px; font-weight:800; font-size:15px; letter-spacing:.5px; }
+  @media (max-width:600px){ .founder { flex-direction:column; align-items:flex-start; } }
   .fine { font-size: 13px; color: #5C6B8C; margin-top: 18px; text-align: center; }
   a { color: #4DA6FF; }
   .steps { counter-reset: s; list-style: none; padding: 0; margin: 18px 0 0; }
@@ -156,6 +160,10 @@ fbq('track', 'PageView');
   <h1>Start your free trial</h1>
   <p class="sub" id="planSub">Your account is ready. Pick a plan — every one is free for 14 days, and you can switch or cancel anytime.</p>
   <form id="pf">
+    <div class="founder" role="note">
+      <span class="fbadge">FOUNDING MEMBER</span>
+      <div><b>$10 off every month, for life.</b> Choose Plus or Elite and enter code <code>FOUNDER100</code> on the next page. Elite drops to <b>$34.99</b>, Plus to <b>$24.99</b>.</div>
+    </div>
     <div class="pgrid">
       <label class="pcard">
         <input type="radio" name="plan" value="pro">
@@ -163,7 +171,7 @@ fbq('track', 'PageView');
         <div class="pfor">For getting started</div>
         <div class="pprice"><b>$24.99</b> / month</div>
         <div class="pwhy">Part-time sourcing. About <b>1.2¢ per scan</b> — one item that clears $25 profit covers the month.</div>
-        <ul class="pfeat"><li class="hi">2,000 scans a month (~60 a day)</li><li>Barcode scan, name search and listing lookup</li><li>Chrome extension (phone app soon)</li><li>Variations with price and stock (Chrome extension)</li><li>Use on all your devices</li><li>Monthly sales estimates</li><li>Profit, ROI, breakeven and max buy cost</li><li>Quantity, prep cost and WFS storage months in every calculation</li><li>Verified Walmart referral and WFS fees</li><li>Competing sellers — price, stock, WFS or SF</li><li>Buy-box breakdown: who usually wins it</li><li>Sold-out detection, with the sellers recently on the listing</li><li>Scan history and saved products</li><li>Price, buy-box and stock charts — up to a year of history</li><li>Push alerts: price moves, stock-outs, sellers joining or leaving</li><li>Slow-seller warnings</li><li>60 storefront lookups a month</li><li>CSV and unlimited Google Sheets exports</li></ul>
+        <ul class="pfeat"><li class="hi">2,000 scans a month (~60 a day)</li><li>Barcode scan, name search and listing lookup</li><li>Chrome extension + Android app (iPhone soon)</li><li>Variations with price and stock (Chrome extension)</li><li>Use on all your devices</li><li>Monthly sales estimates</li><li>Profit, ROI, breakeven and max buy cost</li><li>Quantity, prep cost and WFS storage months in every calculation</li><li>Verified Walmart referral and WFS fees</li><li>Competing sellers — price, stock, WFS or SF</li><li>Buy-box breakdown: who usually wins it</li><li>Sold-out detection, with the sellers recently on the listing</li><li>Scan history and saved products</li><li>Price, buy-box and stock charts — up to a year of history</li><li>Push alerts: price moves, stock-outs, sellers joining or leaving</li><li>Slow-seller warnings</li><li>60 storefront lookups a month</li><li>CSV and unlimited Google Sheets exports</li></ul>
         <div class="ppick"><span class="on">Selected</span><span class="off">Choose Pro</span></div>
       </label>
       <label class="pcard">
@@ -172,7 +180,7 @@ fbq('track', 'PageView');
         <div class="pfor">For full-time sourcing</div>
         <div class="pprice"><b>$34.99</b> / month</div>
         <div class="pwhy">5× the scans of Pro for $10 more — about <b>0.35¢ per scan</b>. One solid flip a month pays for it.</div>
-        <ul class="pfeat"><li class="hi">10,000 scans a month (~330 a day)</li><li class="hi">300 storefront lookups a month</li><li>Barcode scan, name search and listing lookup</li><li>Chrome extension (phone app soon)</li><li>Variations with price and stock (Chrome extension)</li><li>Use on all your devices</li><li>Monthly sales estimates</li><li>Profit, ROI, breakeven and max buy cost</li><li>Quantity, prep cost and WFS storage months in every calculation</li><li>Verified Walmart referral and WFS fees</li><li>Competing sellers — price, stock, WFS or SF</li><li>Buy-box breakdown: who usually wins it</li><li>Sold-out detection, with the sellers recently on the listing</li><li>Scan history and saved products</li><li>Price, buy-box and stock charts — up to a year of history</li><li>Push alerts: price moves, stock-outs, sellers joining or leaving</li><li>Slow-seller warnings</li><li>CSV and unlimited Google Sheets exports</li></ul>
+        <ul class="pfeat"><li class="hi">10,000 scans a month (~330 a day)</li><li class="hi">300 storefront lookups a month</li><li>Barcode scan, name search and listing lookup</li><li>Chrome extension + Android app (iPhone soon)</li><li>Variations with price and stock (Chrome extension)</li><li>Use on all your devices</li><li>Monthly sales estimates</li><li>Profit, ROI, breakeven and max buy cost</li><li>Quantity, prep cost and WFS storage months in every calculation</li><li>Verified Walmart referral and WFS fees</li><li>Competing sellers — price, stock, WFS or SF</li><li>Buy-box breakdown: who usually wins it</li><li>Sold-out detection, with the sellers recently on the listing</li><li>Scan history and saved products</li><li>Price, buy-box and stock charts — up to a year of history</li><li>Push alerts: price moves, stock-outs, sellers joining or leaving</li><li>Slow-seller warnings</li><li>CSV and unlimited Google Sheets exports</li></ul>
         <div class="ppick"><span class="on">Selected</span><span class="off">Choose Plus</span></div>
       </label>
       <label class="pcard">
@@ -181,7 +189,7 @@ fbq('track', 'PageView');
         <div class="pfor">For teams and high volume</div>
         <div class="pprice"><b>$44.99</b> / month</div>
         <div class="pwhy">Double Plus, plus photo search and CartIQ — about <b>0.22¢ per scan</b>, the lowest of any plan.</div>
-        <ul class="pfeat"><li class="hi">20,000 scans a month (~660 a day)</li><li class="hi">1,000 storefront lookups a month</li><li class="hi">Photo search — no barcode needed</li><li class="hi">CartIQ — your whole cart&#x27;s profit while you shop</li><li>Barcode scan, name search and listing lookup</li><li>Chrome extension (phone app soon)</li><li>Variations with price and stock (Chrome extension)</li><li>Use on all your devices</li><li>Monthly sales estimates</li><li>Profit, ROI, breakeven and max buy cost</li><li>Quantity, prep cost and WFS storage months in every calculation</li><li>Verified Walmart referral and WFS fees</li><li>Competing sellers — price, stock, WFS or SF</li><li>Buy-box breakdown: who usually wins it</li><li>Sold-out detection, with the sellers recently on the listing</li><li>Scan history and saved products</li><li>Price, buy-box and stock charts — up to a year of history</li><li>Push alerts: price moves, stock-outs, sellers joining or leaving</li><li>Slow-seller warnings</li><li>CSV and unlimited Google Sheets exports</li></ul>
+        <ul class="pfeat"><li class="hi">20,000 scans a month (~660 a day)</li><li class="hi">1,000 storefront lookups a month</li><li class="hi">Photo search — no barcode needed</li><li class="hi">CartIQ — your whole cart&#x27;s profit while you shop</li><li>Barcode scan, name search and listing lookup</li><li>Chrome extension + Android app (iPhone soon)</li><li>Variations with price and stock (Chrome extension)</li><li>Use on all your devices</li><li>Monthly sales estimates</li><li>Profit, ROI, breakeven and max buy cost</li><li>Quantity, prep cost and WFS storage months in every calculation</li><li>Verified Walmart referral and WFS fees</li><li>Competing sellers — price, stock, WFS or SF</li><li>Buy-box breakdown: who usually wins it</li><li>Sold-out detection, with the sellers recently on the listing</li><li>Scan history and saved products</li><li>Price, buy-box and stock charts — up to a year of history</li><li>Push alerts: price moves, stock-outs, sellers joining or leaving</li><li>Slow-seller warnings</li><li>CSV and unlimited Google Sheets exports</li></ul>
         <div class="ppick"><span class="on">Selected</span><span class="off">Choose Elite</span></div>
       </label>
     </div>
@@ -189,7 +197,7 @@ fbq('track', 'PageView');
       <div class="today"><span>Due today</span><b>$0.00</b></div>
       <button id="trialGo" type="submit">Start 14-day free trial of Plus</button>
       <div class="msg" id="pmsg" role="alert"></div>
-      <p class="fine" style="margin-top:12px">Card required. You won't be charged until the trial ends, and you can cancel before then. Have a founding-member code? Enter it on the next page.</p>
+      <p class="fine" style="margin-top:12px">Card required. You won't be charged until the trial ends, and you can cancel before then. Founding-member code <b>FOUNDER100</b> takes $10 off Plus or Elite for life. Enter it on the next page.</p>
     </div>
   </form>
   <a class="skip" href="#" id="skipTrial">Skip for now — I'll start my trial in the extension</a>
