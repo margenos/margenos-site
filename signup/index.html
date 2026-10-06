@@ -317,7 +317,14 @@ fbq('track', 'PageView');
         $('sentTo').textContent = em;
         if (window.gtag) { try { window.gtag('event', 'sign_up', { method: 'email' }); window.gtag('event', 'conversion', { send_to: 'AW-18477315728/YczbCKO6oosdEJDt1epE', value: 1.0, currency: 'USD' }); } catch (_) {} }
         if (window.ttq) { try { window.ttq.track('CompleteRegistration'); } catch (_) {} }
-        if (window.fbq) { try { window.fbq('track', 'CompleteRegistration'); } catch (_) {} }
+        // Same event id for the pixel and the server copy, so Meta counts it once.
+        var regId = 'reg_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 10);
+        if (window.fbq) { try { window.fbq('track', 'CompleteRegistration', {}, { eventID: regId }); } catch (_) {} }
+        try {
+          var ck = function (n) { var m = document.cookie.match(new RegExp('(?:^|; )' + n + '=([^;]*)')); return m ? decodeURIComponent(m[1]) : ''; };
+          fetch(API + '/api/track/signup', { method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ eventId: regId, email: em, fbp: ck('_fbp'), fbc: ck('_fbc'), url: location.href }) }).catch(function () {});
+        } catch (_) {}
         // With email confirmation off, Supabase signs the person in right away:
         // go straight to the trial step. Otherwise they confirm by email first.
         if (j.access_token) { saveToken(j.access_token); show('planView'); }
