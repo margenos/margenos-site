@@ -67,7 +67,7 @@ fbq('track', 'PageView');
     <a href="/walmart-profit-calculator/">Profit calculator</a>
     <a href="/walmart-scanner-app/">Scanner app</a>
     <a href="/walmart-chrome-extension/">Chrome extension</a>
-    <a class="btn primary sm" href="/signup/">Start 14-day free trial</a>
+    <a class="btn primary sm" href="https://chromewebstore.google.com/detail/margenos-walmart-seller-t/pomkafoddncmlmpjaapaiaapcbpkdiee" target="_blank" rel="noopener" data-cta="install">Add to Chrome – Free</a>
   </div>
 </div></nav>
 <header class="page"><div class="wrap"><div class="eyebrow">Walmart seller account · step by step</div><h1>How to <em>sell on Walmart</em> Marketplace in 2026</h1><p class="lede">Everything you need to get a Walmart seller account approved, set up Seller Center, understand the fees and pick products that make money.</p><p class="faint" style="font-size:14px">Updated September 29, 2026 · By the Margenos team</p></div></header>
@@ -155,7 +155,7 @@ fbq('track', 'PageView');
   <div class="cta-band">
     <h2>Approved? <span class="grad">Now find what profits.</span></h2>
     <p>Margenos shows fees, profit, ROI, sales estimates and competing sellers for any Walmart product, right in Chrome. Every plan starts with a 14-day free trial.</p>
-    <a class="btn primary" href="/signup/">Start 14-day free trial</a> <a class="btn ghost" href="/walmart-profit-calculator/">Try the free calculator</a>
+    <a class="btn primary" href="https://chromewebstore.google.com/detail/margenos-walmart-seller-t/pomkafoddncmlmpjaapaiaapcbpkdiee" target="_blank" rel="noopener" data-cta="install">Add to Chrome – Free</a> <a class="btn ghost" href="/walmart-profit-calculator/">Try the free calculator</a>
   </div>
   <p class="faint" style="margin-top:22px;font-size:14px">More from Margenos</p>
   <div class="related"><a href="/best-items-to-sell-on-walmart/">Best items to sell on Walmart</a><a href="/walmart-buy-box/">How to win the Walmart Buy Box</a><a href="/walmart-vs-amazon/">Walmart vs Amazon</a><a href="/walmart-seller-fees/">Walmart seller fees</a><a href="/walmart-wfs-fees/">Walmart WFS fees</a><a href="/how-to-calculate-walmart-profit/">How to calculate Walmart profit</a><a href="/walmart-clearance-reselling/">Walmart clearance reselling</a><a href="/walmart-arbitrage/">Walmart arbitrage</a><a href="/walmart-profit-calculator/">Walmart profit calculator</a><a href="/walmart-scanner-app/">Walmart scanner app</a><a href="/walmart-chrome-extension/">Walmart Chrome extension</a></div>
@@ -167,5 +167,18 @@ fbq('track', 'PageView');
 </div></footer>
 
 <script src="/assets/help-chat.js" defer></script>
+<script>
+  // Install buttons: computers go to the Chrome Web Store, Android phones to Google Play,
+  // iPhones (no iOS app yet) to the account signup.
+  (function () {
+    var ua = navigator.userAgent || '';
+    var android = /Android/i.test(ua), ios = /iPhone|iPad|iPod/i.test(ua);
+    if (!android && !ios) return;
+    document.querySelectorAll('a[data-cta="install"]').forEach(function (a) {
+      if (android) { a.href = 'https://play.google.com/store/apps/details?id=com.margenos.app'; a.textContent = 'Get the free Android app'; }
+      else { a.href = '/signup/'; a.removeAttribute('target'); a.textContent = 'Start 14-day free trial'; }
+    });
+  })();
+</script>
 </body>
 </html>
