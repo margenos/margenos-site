@@ -377,6 +377,275 @@ fbq('track', 'PageView');
   </div>
 </header>
 
+<!-- ===== Margenos scroll film: scan → profit → history → sellers → alerts ===== -->
+<style>
+.mg-film{position:relative;height:600vh;background:var(--bg,#050A18)}
+.mg-stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+.mg-bg{position:absolute;inset:0;background:radial-gradient(55% 45% at 72% 45%,rgba(57,255,20,.10),transparent 70%),radial-gradient(45% 40% at 18% 80%,rgba(167,139,250,.12),transparent 70%)}
+.mg-grid{position:absolute;inset:-20% -20% 0;background-image:linear-gradient(rgba(57,255,20,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(57,255,20,.06) 1px,transparent 1px);background-size:56px 56px;transform:perspective(700px) rotateX(62deg) translateY(30%);transform-origin:50% 100%;-webkit-mask-image:linear-gradient(to top,#000,transparent 70%);mask-image:linear-gradient(to top,#000,transparent 70%)}
+.mg-intro{position:absolute;inset:0;z-index:6;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 20px;pointer-events:none}
+.mg-intro .k{font-size:12px;font-weight:800;letter-spacing:.22em;color:var(--signal,#39FF14);text-transform:uppercase}
+.mg-intro h2{font-size:clamp(38px,6.6vw,84px);line-height:1;letter-spacing:-.04em;font-weight:900;margin:14px 0 12px;color:var(--ink,#F2F6FF)}
+.mg-intro h2 em{font-style:normal;color:var(--signal,#39FF14)}
+.mg-intro p{color:var(--muted,#94A3C4);font-size:18px;margin:0}
+.mg-hint{margin-top:28px;font-size:11px;letter-spacing:.3em;color:var(--faint,#5C6B8C);font-weight:700}
+.mg-hint i{display:block;width:22px;height:36px;margin:10px auto 0;border:2px solid #24304A;border-radius:12px;position:relative}
+.mg-hint i::after{content:"";position:absolute;left:50%;top:7px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:var(--signal,#39FF14);animation:mgw 1.6s ease-in-out infinite}
+@keyframes mgw{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(12px)}}
+.mg-cap{position:absolute;z-index:5;left:clamp(20px,6vw,90px);top:50%;width:min(430px,38vw)}
+.mg-step{position:absolute;left:0;top:0;width:100%;transform:translateY(-50%);opacity:0;transition:opacity .45s,transform .45s}
+.mg-step .n{font-size:12px;font-weight:800;letter-spacing:.2em;color:var(--signal,#39FF14);text-transform:uppercase}
+.mg-step h3{font-size:clamp(32px,4.2vw,54px);line-height:1.03;letter-spacing:-.03em;font-weight:900;margin:12px 0 14px;color:var(--ink,#F2F6FF)}
+.mg-step h3 em{font-style:normal;color:var(--signal,#39FF14)}
+.mg-step p{color:var(--muted,#94A3C4);font-size:17px;line-height:1.6;margin:0}
+.mg-dev{position:absolute;z-index:4;right:clamp(16px,6vw,110px);top:50%;width:560px;height:600px;margin-top:-300px;transform-origin:100% 50%}
+/* phone */
+.mg-phone{position:absolute;left:130px;top:0;width:290px;height:600px;border-radius:46px;background:#070B16;padding:10px;box-shadow:0 0 0 2px #1B2540,0 0 0 9px #060912,0 40px 100px -20px rgba(0,0,0,.85),0 0 80px rgba(57,255,20,.18)}
+.mg-scr{position:relative;width:100%;height:100%;border-radius:37px;overflow:hidden;background:#000}
+.mg-scr img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.mg-isl{position:absolute;z-index:5;top:9px;left:50%;width:88px;height:25px;margin-left:-44px;border-radius:14px;background:#000}
+.mg-frame{position:absolute;z-index:3;left:18%;right:18%;top:40%;height:20%;border-radius:14px}
+.mg-frame::before,.mg-frame::after{content:"";position:absolute;inset:0;border-radius:14px;border:3px solid var(--signal,#39FF14);-webkit-mask:linear-gradient(#000 0 0) top left/26px 26px no-repeat,linear-gradient(#000 0 0) top right/26px 26px no-repeat,linear-gradient(#000 0 0) bottom left/26px 26px no-repeat,linear-gradient(#000 0 0) bottom right/26px 26px no-repeat;mask:linear-gradient(#000 0 0) top left/26px 26px no-repeat,linear-gradient(#000 0 0) top right/26px 26px no-repeat,linear-gradient(#000 0 0) bottom left/26px 26px no-repeat,linear-gradient(#000 0 0) bottom right/26px 26px no-repeat}
+.mg-laser{position:absolute;z-index:4;left:16%;right:16%;height:2px;background:var(--signal,#39FF14);box-shadow:0 0 14px 3px rgba(57,255,20,.8);opacity:0}
+.mg-found{position:absolute;z-index:5;left:12px;right:12px;bottom:16px;border-radius:16px;background:rgba(8,16,38,.92);border:1px solid rgba(57,255,20,.4);padding:12px 14px;color:var(--ink,#F2F6FF);opacity:0;transform:translateY(20px);transition:.35s}
+.mg-found.on{opacity:1;transform:none}
+.mg-found small{display:block;color:var(--signal,#39FF14);font-size:10.5px;font-weight:800;letter-spacing:.14em}
+.mg-found b{display:block;font-size:14px;margin:3px 0 2px}.mg-found span{font-size:11.5px;color:var(--muted,#94A3C4)}
+.mg-flash{position:absolute;inset:0;z-index:6;background:#fff;opacity:0;pointer-events:none}
+/* panel */
+.mg-panel{position:absolute;left:0;top:10px;width:560px;height:580px;border-radius:22px;background:rgba(13,21,38,.96);border:1px solid rgba(255,255,255,.08);box-shadow:0 40px 100px -30px rgba(0,0,0,.9),0 0 0 1px rgba(57,255,20,.06);overflow:hidden;opacity:0;color:var(--ink,#F2F6FF)}
+.mg-ph{display:flex;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.08)}
+.mg-ph .lg{width:30px;height:30px;border-radius:9px;background:#0A1222;display:flex;align-items:center;justify-content:center}
+.mg-ph .t{flex:1;min-width:0}.mg-ph .t b{display:block;font-size:14.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.mg-ph .t span{font-size:11.5px;color:var(--faint,#5C6B8C)}
+.mg-ph .ex{font-size:10px;font-weight:800;letter-spacing:.12em;color:var(--warn,#FFB020);border:1px solid rgba(255,176,32,.35);border-radius:6px;padding:3px 7px}
+.mg-tabs{display:flex;gap:6px;padding:12px 20px 0}
+.mg-tabs span{font-size:12px;font-weight:700;color:var(--faint,#5C6B8C);padding:7px 12px;border-radius:9px;transition:.3s}
+.mg-tabs span.on{background:var(--signal-dim,rgba(57,255,20,.1));color:var(--signal,#39FF14)}
+.mg-pane{position:absolute;left:0;right:0;top:118px;bottom:0;padding:16px 20px;opacity:0;transform:translateY(14px);transition:opacity .4s,transform .4s}
+.mg-pane.on{opacity:1;transform:none}
+.mg-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.mg-kpi{border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:12px;background:#0A1222}
+.mg-kpi b{display:block;font-size:26px;font-weight:900;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.mg-kpi span{font-size:11px;color:var(--muted,#94A3C4);font-weight:600}
+.mg-kpi .g{color:var(--signal,#39FF14)}.mg-kpi .v{color:var(--violet,#A78BFA)}.mg-kpi .w{color:var(--warn,#FFB020)}
+.mg-wf{display:flex;flex-direction:column;gap:7px}
+.mg-wr{display:grid;grid-template-columns:130px 1fr 66px;align-items:center;gap:10px;font-size:12.5px;color:var(--muted,#94A3C4)}
+.mg-wr .bar{height:14px;border-radius:4px;background:#141E33;position:relative;overflow:hidden}
+.mg-wr .bar i{position:absolute;top:0;bottom:0;border-radius:4px;transform-origin:left;transform:scaleX(0)}
+.mg-wr b{text-align:right;color:var(--ink,#F2F6FF);font-variant-numeric:tabular-nums}
+.mg-wr.neg b{color:#FF8A95}.mg-wr.tot{border-top:1px solid rgba(255,255,255,.08);padding-top:8px;margin-top:2px}.mg-wr.tot b{color:var(--signal,#39FF14);font-size:15px}
+.mg-max{margin-top:14px;display:flex;gap:10px}
+.mg-max div{flex:1;border-radius:12px;padding:10px 12px;background:#0A1222;border:1px dashed rgba(57,255,20,.3);font-size:11.5px;color:var(--muted,#94A3C4)}
+.mg-max b{display:block;color:var(--ink,#F2F6FF);font-size:16px}
+.mg-chart{position:relative;height:250px;border:1px solid rgba(255,255,255,.08);border-radius:14px;background:#0A1222;padding:12px}
+.mg-chart svg{width:100%;height:100%;overflow:visible}
+.mg-leg{display:flex;gap:16px;font-size:11.5px;color:var(--muted,#94A3C4);margin:12px 0 10px}
+.mg-leg i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.mg-src{font-size:11.5px;color:var(--faint,#5C6B8C);border-top:1px solid rgba(255,255,255,.06);padding-top:10px}
+.mg-src b{color:var(--ink,#F2F6FF)}
+.mg-sel{display:flex;flex-direction:column;gap:7px}
+.mg-row{display:grid;grid-template-columns:1fr 54px 64px 62px;align-items:center;gap:8px;font-size:13px;padding:10px 12px;border-radius:12px;background:#0A1222;border:1px solid rgba(255,255,255,.06);opacity:0;transform:translateX(30px);transition:.4s}
+.mg-row.on{opacity:1;transform:none}
+.mg-row .nm{display:flex;align-items:center;gap:8px;font-weight:700}
+.mg-row .p{font-size:9.5px;font-weight:900;letter-spacing:.06em;padding:3px 6px;border-radius:5px}
+.p.wm{background:rgba(0,113,206,.2);color:#6CB4FF}.p.wfs{background:var(--signal-dim,rgba(57,255,20,.1));color:var(--signal,#39FF14)}.p.sf{background:rgba(167,139,250,.15);color:var(--violet,#A78BFA)}
+.mg-row span{text-align:right;color:var(--muted,#94A3C4);font-variant-numeric:tabular-nums}.mg-row span.pr{color:var(--ink,#F2F6FF);font-weight:700}
+.mg-rh{display:grid;grid-template-columns:1fr 54px 64px 62px;gap:8px;font-size:10.5px;font-weight:800;letter-spacing:.1em;color:var(--faint,#5C6B8C);padding:0 12px}
+.mg-rh span{text-align:right}
+.mg-bb{display:flex;align-items:center;gap:18px;margin-top:14px;padding:12px;border-radius:14px;background:#0A1222;border:1px solid rgba(255,255,255,.06)}
+.mg-bb svg{width:92px;height:92px;flex:none;transform:rotate(-90deg)}
+.mg-bb .l{flex:1;font-size:12.5px;color:var(--muted,#94A3C4)}.mg-bb .l div{display:flex;justify-content:space-between;padding:3px 0}.mg-bb .l b{color:var(--ink,#F2F6FF)}
+.mg-bb .l i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px}
+.mg-stock{font-size:11.5px;color:var(--muted,#94A3C4);margin-top:10px}.mg-stock b{color:var(--ink,#F2F6FF)}
+/* alerts */
+.mg-alerts{position:absolute;z-index:7;right:clamp(16px,4vw,60px);top:clamp(80px,14vh,140px);width:320px;display:flex;flex-direction:column;gap:10px;pointer-events:none}
+.mg-al{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border-radius:16px;background:rgba(242,246,255,.97);color:#0B1220;box-shadow:0 16px 40px -10px rgba(0,0,0,.6);opacity:0;transform:translateY(-14px) scale(.96);transition:.4s cubic-bezier(.2,1.4,.4,1)}
+.mg-al.on{opacity:1;transform:none}
+.mg-al .ic{width:30px;height:30px;border-radius:8px;background:#050A18;display:flex;align-items:center;justify-content:center;flex:none}
+.mg-al b{display:block;font-size:13px}.mg-al span{font-size:12px;color:#475569}
+.mg-al em{font-style:normal;font-size:10.5px;color:#64748B;margin-left:auto;white-space:nowrap}
+.mg-final{position:absolute;inset:0;z-index:8;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 20px;opacity:0;pointer-events:none;background:radial-gradient(60% 50% at 50% 50%,rgba(5,10,24,.75),rgba(5,10,24,.95))}
+.mg-final h3{font-size:clamp(40px,6.4vw,82px);line-height:1;letter-spacing:-.04em;font-weight:900;margin:0 0 16px;color:var(--ink,#F2F6FF)}
+.mg-final h3 em{font-style:normal;color:var(--signal,#39FF14)}
+.mg-final p{color:var(--muted,#94A3C4);font-size:18px;margin:0 0 24px;max-width:560px}
+.mg-final .row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.mg-final .fine{margin-top:18px;font-size:12px;color:var(--faint,#5C6B8C)}
+@media (max-width:900px){
+  .mg-cap{left:18px;right:18px;width:auto;top:max(76px,9vh)}
+  .mg-step{transform:none}
+  .mg-step h3{font-size:28px;margin:6px 0 6px}
+  .mg-step p{font-size:14.5px;line-height:1.5}
+  .mg-dev{right:auto;left:50%;top:auto;bottom:max(14px,2vh);margin:0;transform-origin:50% 100%}
+  .mg-alerts{left:16px;right:16px;width:auto;top:auto;bottom:24px}
+}
+@media (prefers-reduced-motion:reduce){.mg-film{height:auto}.mg-stage{position:relative}}
+</style>
+
+<section class="mg-film" id="mgFilm" aria-label="How a Margenos scan works: scan, profit, sales history, sellers and alerts">
+  <div class="mg-stage">
+    <div class="mg-bg"></div><div class="mg-grid"></div>
+
+    <div class="mg-intro" id="mgIntro">
+      <div class="k">Before you buy a single unit</div>
+      <h2>Will it sell?<br><em>Will it profit?</em></h2>
+      <p>Scroll to watch one scan answer both.</p>
+      <div class="mg-hint">SCROLL<i></i></div>
+    </div>
+
+    <div class="mg-cap">
+      <div class="mg-step"><div class="n">01 · Scan</div><h3>Point. Scan. <em>Done.</em></h3><p>Scan a barcode in the aisle with the phone app, or open any Walmart.com listing with the Chrome extension.</p></div>
+      <div class="mg-step"><div class="n">02 · Profit</div><h3>Your real profit, <em>after every fee.</em></h3><p>Referral fee, WFS fulfillment, storage, prep and your buy cost, plus the max you can pay and still hit your ROI.</p></div>
+      <div class="mg-step"><div class="n">03 · Demand</div><h3>See if it <em>actually sells.</em></h3><p>A year of price and stock history with monthly sales estimates. Every estimate shows its source, or says when there isn't enough data.</p></div>
+      <div class="mg-step"><div class="n">04 · Competition</div><h3>Who you're <em>up against.</em></h3><p>Every seller, their price and stock, WFS or self-fulfilled, and who usually wins the buy box.</p></div>
+      <div class="mg-step"><div class="n">05 · Alerts</div><h3>It keeps <em>watching.</em></h3><p>Track a product and get a push alert when the price moves, it sells out, or a new seller shows up.</p></div>
+    </div>
+
+    <div class="mg-dev" id="mgDev" aria-hidden="true">
+      <div class="mg-phone" id="mgPhone">
+        <div class="mg-scr">
+          <img src="/assets/scan-shelf.webp" alt="">
+          <div class="mg-isl"></div>
+          <div class="mg-frame"></div>
+          <div class="mg-laser" id="mgLaser"></div>
+          <div class="mg-found" id="mgFound"><small>✓ BARCODE FOUND</small><b>Stainless Steel Insulated Tumbler, 40 oz</b><span>UPC 0 84511 62930 7 · 3 sellers</span></div>
+          <div class="mg-flash" id="mgFlash"></div>
+        </div>
+      </div>
+
+      <div class="mg-panel" id="mgPanel">
+        <div class="mg-ph">
+          <span class="lg"><svg width="18" height="18" viewBox="282 227 460 534"><path d="M335 708V420L512 586L689 280V708" fill="none" stroke="#39FF14" stroke-width="106" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div class="t"><b>Stainless Steel Insulated Tumbler, 40 oz</b><span>Kitchen &amp; Dining · 3 sellers</span></div>
+          <span class="ex">EXAMPLE DATA</span>
+        </div>
+        <div class="mg-tabs"><span data-t="0">Profit</span><span data-t="1">Sales history</span><span data-t="2">Sellers</span></div>
+
+        <div class="mg-pane" data-p="0">
+          <div class="mg-kpis">
+            <div class="mg-kpi"><b class="g" id="mgK1">$0.00</b><span>Profit / unit</span></div>
+            <div class="mg-kpi"><b class="v" id="mgK2">0%</b><span>ROI</span></div>
+            <div class="mg-kpi"><b class="w" id="mgK3">0+</b><span>Est. sold / month</span></div>
+          </div>
+          <div class="mg-wf">
+            <div class="mg-wr"><span>Sale price</span><span class="bar"><i style="left:0;width:100%;background:#4D8BFF"></i></span><b>$24.97</b></div>
+            <div class="mg-wr neg"><span>Referral fee (15%)</span><span class="bar"><i style="left:85%;width:15%;background:#FF4D5E"></i></span><b>−$3.75</b></div>
+            <div class="mg-wr neg"><span>WFS fulfillment</span><span class="bar"><i style="left:61.8%;width:23.2%;background:#FF4D5E"></i></span><b>−$5.80</b></div>
+            <div class="mg-wr neg"><span>Prep &amp; inbound</span><span class="bar"><i style="left:59.8%;width:2%;background:#FF4D5E"></i></span><b>−$0.50</b></div>
+            <div class="mg-wr neg"><span>Your buy cost</span><span class="bar"><i style="left:19.7%;width:40.1%;background:#FFB020"></i></span><b>−$10.00</b></div>
+            <div class="mg-wr tot"><span>Profit</span><span class="bar"><i style="left:0;width:19.7%;background:#39FF14"></i></span><b>$4.92</b></div>
+          </div>
+          <div class="mg-max"><div>Max buy cost for 30% ROI<b>$11.48</b></div><div>Breakeven buy cost<b>$14.92</b></div></div>
+        </div>
+
+        <div class="mg-pane" data-p="1">
+          <div class="mg-chart">
+            <svg viewBox="0 0 500 220" preserveAspectRatio="none">
+              <g stroke="rgba(255,255,255,.06)"><path d="M0 55H500M0 110H500M0 165H500"/></g>
+              <g id="mgBars" fill="rgba(167,139,250,.55)"></g>
+              <path id="mgLine" fill="none" stroke="#39FF14" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
+              <circle id="mgDot" r="5" fill="#39FF14" opacity="0"/>
+              <g font-size="11" fill="#5C6B8C" font-family="Inter,sans-serif" id="mgMonths"></g>
+            </svg>
+          </div>
+          <div class="mg-leg"><span><i style="background:#39FF14"></i>Price</span><span><i style="background:#A78BFA"></i>Est. units sold</span><span style="margin-left:auto">Last 12 months</span></div>
+          <div class="mg-src">Last month: <b id="mgSold">430+</b> sold · Source: <b>stock drops across sellers + review velocity</b>. Shown as a floor when we're less sure.</div>
+        </div>
+
+        <div class="mg-pane" data-p="2">
+          <div class="mg-rh"><span style="text-align:left">SELLER</span><span>TYPE</span><span>PRICE</span><span>STOCK</span></div>
+          <div class="mg-sel">
+            <div class="mg-row"><span class="nm">Walmart.com</span><span><b class="p wm">WM</b></span><span class="pr">$24.97</span><span>205</span></div>
+            <div class="mg-row"><span class="nm">Northline Goods</span><span><b class="p wfs">WFS</b></span><span class="pr">$25.49</span><span>84</span></div>
+            <div class="mg-row"><span class="nm">Harbor Deals</span><span><b class="p sf">SF</b></span><span class="pr">$26.10</span><span>23</span></div>
+          </div>
+          <div class="mg-bb">
+            <svg viewBox="0 0 42 42"><circle cx="21" cy="21" r="15.9" fill="none" stroke="#141E33" stroke-width="7"/><circle id="mgD1" cx="21" cy="21" r="15.9" fill="none" stroke="#0071CE" stroke-width="7" stroke-dasharray="0 100"/><circle id="mgD2" cx="21" cy="21" r="15.9" fill="none" stroke="#39FF14" stroke-width="7" stroke-dasharray="0 100" stroke-dashoffset="-62"/><circle id="mgD3" cx="21" cy="21" r="15.9" fill="none" stroke="#A78BFA" stroke-width="7" stroke-dasharray="0 100" stroke-dashoffset="-88"/></svg>
+            <div class="l"><div style="font-size:10.5px;font-weight:800;letter-spacing:.1em;color:#5C6B8C">WHO WINS THE BUY BOX</div><div><span><i style="background:#0071CE"></i>Walmart.com</span><b>62%</b></div><div><span><i style="background:#39FF14"></i>Northline Goods</span><b>26%</b></div><div><span><i style="background:#A78BFA"></i>Harbor Deals</span><b>12%</b></div></div>
+          </div>
+          <div class="mg-stock">Total stock across sellers: <b>312 units</b> · <b>66%</b> held by Walmart.com</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mg-alerts" id="mgAlerts" aria-hidden="true">
+      <div class="mg-al"><span class="ic"><svg width="14" height="14" viewBox="282 227 460 534"><path d="M335 708V420L512 586L689 280V708" fill="none" stroke="#39FF14" stroke-width="120" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Price dropped 14%</b><span>Insulated Tumbler 40 oz is now $21.49</span></div><em>now</em></div>
+      <div class="mg-al"><span class="ic"><svg width="14" height="14" viewBox="282 227 460 534"><path d="M335 708V420L512 586L689 280V708" fill="none" stroke="#39FF14" stroke-width="120" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Walmart.com sold out</b><span>2 sellers left · buy box is open</span></div><em>2m</em></div>
+      <div class="mg-al"><span class="ic"><svg width="14" height="14" viewBox="282 227 460 534"><path d="M335 708V420L512 586L689 280V708" fill="none" stroke="#39FF14" stroke-width="120" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>New WFS seller joined</b><span>Brightway Supply at $25.29</span></div><em>1h</em></div>
+    </div>
+
+    <div class="mg-final" id="mgFinal">
+      <h3>Know before <em>you buy.</em></h3>
+      <p>Profit, demand, competition and alerts for any Walmart product, on your phone and in Chrome.</p>
+      <div class="row"><a class="btn primary" href="/signup/">Start 14-day free trial</a><a class="btn ghost" href="#pricing">See pricing</a></div>
+      <div class="fine">Example data shown. Not affiliated with Walmart.</div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var film=document.getElementById('mgFilm');if(!film)return;
+  var $=function(id){return document.getElementById(id)};
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function c(x){return x<0?0:x>1?1:x}function seg(p,a,b){return c((p-a)/(b-a))}
+  function ease(x){return x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2}
+  var steps=[].slice.call(film.querySelectorAll('.mg-step')),tabs=[].slice.call(film.querySelectorAll('.mg-tabs span')),panes=[].slice.call(film.querySelectorAll('.mg-pane'));
+  var wf=[].slice.call(film.querySelectorAll('.mg-wr .bar i')),rows=[].slice.call(film.querySelectorAll('.mg-row')),als=[].slice.call(film.querySelectorAll('.mg-al'));
+  // chart data
+  var price=[26.4,25.9,25.1,24.6,24.97,25.4,23.8,22.9,24.2,24.97,25.3,24.97],sold=[210,240,280,260,310,350,420,520,610,480,450,430];
+  var M=['N','D','J','F','M','A','M','J','J','A','S','O'],W=500,H=200,bw=W/12;
+  var bars=$('mgBars'),months=$('mgMonths'),NS='http://www.w3.org/2000/svg',pts=[];
+  for(var i=0;i<12;i++){var r=document.createElementNS(NS,'rect');r.setAttribute('x',i*bw+8);r.setAttribute('width',bw-16);r.setAttribute('rx',3);r.setAttribute('y',H);r.setAttribute('height',0);bars.appendChild(r);
+    var t=document.createElementNS(NS,'text');t.setAttribute('x',i*bw+bw/2);t.setAttribute('y',H+16);t.setAttribute('text-anchor','middle');t.textContent=M[i];months.appendChild(t);
+    pts.push([i*bw+bw/2,30+(27-price[i])/5*120])}
+  $('mgLine').setAttribute('d','M'+pts.map(function(p){return p[0]+' '+p[1]}).join(' L'));
+  var rects=[].slice.call(bars.children);
+  var mobile=false;
+  function render(p){
+    mobile=innerWidth<=900;
+    var intro=1-seg(p,.02,.07);$('mgIntro').style.opacity=intro;$('mgIntro').style.transform='translateY('+(-30*(1-intro))+'px)';
+    var act=p<.06?-1:p<.22?0:p<.42?1:p<.6?2:p<.76?3:p<.88?4:-1;
+    steps.forEach(function(s,i){var on=i===act;s.style.opacity=on?1:0;s.style.transform=(mobile?'':'translateY(-50%) ')+'translateY('+(on?0:(i<act?-18:18))+'px)'});
+    // device scale
+    var dev=$('mgDev'),avail=mobile?Math.min((innerHeight-(innerWidth<400?250:230))/600,(innerWidth-24)/560):Math.min((innerHeight-110)/600,(innerWidth*.56)/560,1);
+    var din=ease(seg(p,.05,.12)),dout=seg(p,.86,.92);
+    dev.style.opacity=din*(1-dout);
+    dev.style.transform=(mobile?'translateX(-50%) ':'translateY(30px) ')+'scale('+(avail*(.92+.08*din))+')';
+    // scene 1 scan
+    var sc=seg(p,.10,.19);$('mgLaser').style.opacity=(sc>0&&sc<1)?1:0;$('mgLaser').style.top=(40+20*Math.abs(Math.sin(sc*Math.PI*2)))+'%';
+    $('mgFound').classList.toggle('on',p>.185&&p<.27);
+    $('mgFlash').style.opacity=p>.183&&p<.195?.6:0;
+    var swap=ease(seg(p,.23,.28));
+    $('mgPhone').style.opacity=1-swap;$('mgPhone').style.transform='translateX('+(-120*swap)+'px) scale('+(1-.15*swap)+') rotate('+(-8*swap)+'deg)';
+    $('mgPanel').style.opacity=swap;$('mgPanel').style.transform='translateX('+(80*(1-swap))+'px) scale('+(.94+.06*swap)+')';
+    // tabs
+    var tab=p<.42?0:p<.6?1:2;tabs.forEach(function(t,i){t.classList.toggle('on',i===tab)});panes.forEach(function(x,i){x.classList.toggle('on',i===tab&&swap>.5)});
+    // profit
+    var pf=ease(seg(p,.28,.38));wf.forEach(function(b,i){b.style.transform='scaleX('+c(pf*1.6-i*.12)+')'});
+    $('mgK1').textContent='$'+(4.92*pf).toFixed(2);$('mgK2').textContent=Math.round(49*pf)+'%';$('mgK3').textContent=Math.round(430*pf)+'+';
+    // chart
+    var ch=ease(seg(p,.44,.56));$('mgLine').style.strokeDashoffset=1-ch;
+    rects.forEach(function(r,i){var k=c(ch*1.5-i*.04),h=sold[i]/620*120*k;r.setAttribute('y',H-h);r.setAttribute('height',h)});
+    var li=Math.min(11,Math.floor(ch*11.99));$('mgDot').setAttribute('cx',pts[li][0]);$('mgDot').setAttribute('cy',pts[li][1]);$('mgDot').setAttribute('opacity',ch>0?1:0);
+    // sellers
+    rows.forEach(function(r,i){r.classList.toggle('on',p>.61+i*.025)});
+    var dn=ease(seg(p,.66,.73));$('mgD1').setAttribute('stroke-dasharray',(62*dn)+' 100');$('mgD2').setAttribute('stroke-dasharray',(26*dn)+' 100');$('mgD3').setAttribute('stroke-dasharray',(12*dn)+' 100');
+    // alerts
+    als.forEach(function(a,i){a.classList.toggle('on',p>.77+i*.03&&p<.9)});
+    $('mgAlerts').style.opacity=1;
+    // final
+    var fin=seg(p,.89,.95);$('mgFinal').style.opacity=fin;$('mgFinal').style.pointerEvents=fin>.5?'auto':'none';
+  }
+  var tick=false;
+  function frame(){tick=false;var r=film.getBoundingClientRect(),tot=film.offsetHeight-innerHeight;render(reduce?.96:c(-r.top/tot))}
+  function req(){if(!tick){tick=true;requestAnimationFrame(frame)}}
+  addEventListener('scroll',req,{passive:true});addEventListener('resize',req);frame();
+})();
+</script>
+<!-- ===== /Margenos scroll film ===== -->
+
+
+
 <div class="stats">
   <div class="wrap">
     <div class="stat reveal"><b class="grad">1 yr</b><span>of price, buy-box and stock history available on every plan</span></div>
