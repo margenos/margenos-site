@@ -33,6 +33,9 @@ fbq('track', 'PageView');
     var link = e.target.closest && e.target.closest('a[href*="chromewebstore.google.com"]');
     if (!link) return;
     gtag('event', 'conversion', {'send_to': 'AW-18477315728/oh6aCIqPu4cdEJDt1epE'});
+    // Meta + TikTok: count the Chrome install click so the ad platforms can optimise for it.
+    if (window.fbq) { try { window.fbq('track', 'Lead', { content_name: 'Add to Chrome' }); } catch (_) {} }
+    if (window.ttq) { try { window.ttq.track('ClickButton', { content_name: 'Add to Chrome' }); } catch (_) {} }
   }, true);
 </script>
 <meta charset="UTF-8" />
