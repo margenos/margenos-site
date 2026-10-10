@@ -134,6 +134,19 @@ fbq('track', 'PageView');
     .pcard:has(input:checked) .ppick { background: #0E7C2E; color: #fff; border-color: #0E7C2E; }
   }
 </style>
+<script>
+/* Margenos: remember how this visitor first arrived (ad click, extension,
+   another site), so the signup can record where new customers come from. */
+(function(){try{
+  var k='mg_src', q=location.search, s=null;
+  try{ s=JSON.parse(localStorage.getItem(k)||'null'); }catch(e){}
+  var tagged=/[?&](fbclid|gclid|ttclid|utm_source|from)=/.test(q);
+  if(s && !tagged) return;
+  var h=''; try{ h=document.referrer?new URL(document.referrer).hostname:''; }catch(e){}
+  if(/(^|\.)margenos\.com$/.test(h)) h='';
+  localStorage.setItem(k, JSON.stringify({ q:q.slice(0,400), ref:h, page:location.pathname, at:new Date().toISOString() }));
+}catch(e){}})();
+</script>
 </head><body><div class="wrap">
 <a class="brand" href="/" aria-label="Margenos home"><svg viewBox="282 227 460 534" aria-hidden="true"><path d="M335 708V420L512 586L689 280V708" fill="none" stroke="#39FF14" stroke-width="106" stroke-linecap="round" stroke-linejoin="round"/></svg>ARGENOS</a>
 
@@ -283,6 +296,35 @@ fbq('track', 'PageView');
     show('planView');
   }
 
+  // Where this customer came from, saved on their account (see mg_src above).
+  function signupSource() {
+    try {
+      var t = {}; try { t = JSON.parse(localStorage.getItem('mg_src') || '{}') || {}; } catch (e) {}
+      var p = new URLSearchParams(location.search), f = new URLSearchParams(t.q || '');
+      var get = function (n) { return p.get(n) || f.get(n) || ''; };
+      var ck = function (n) { return new RegExp('(?:^|; )' + n + '=').test(document.cookie); };
+      var ref = t.ref || '';
+      if (!ref) { try { var h = document.referrer ? new URL(document.referrer).hostname : ''; if (!/(^|\.)margenos\.com$/.test(h)) ref = h; } catch (e) {} }
+      var src;
+      // Ad clicks first: an ad visitor often installs the extension, which then
+      // opens this page with ?from=extension. The ad still gets the credit.
+      if (get('fbclid') || /^(facebook|fb|instagram|ig|meta)$/i.test(get('utm_source'))) src = 'meta_ad';
+      else if (get('gclid') || /^google$/i.test(get('utm_source')) && /cpc|paid|ads?/i.test(get('utm_medium'))) src = 'google_ad';
+      else if (get('ttclid') || /^tiktok$/i.test(get('utm_source'))) src = 'tiktok_ad';
+      else if (get('utm_source')) src = get('utm_source').toLowerCase().slice(0, 40);
+      else if (ck('_fbc')) src = 'meta_ad';
+      else if (ck('_gcl_aw')) src = 'google_ad';
+      else if (get('from') === 'extension' || get('src') === 'extension') src = 'extension';
+      else if (/chromewebstore|chrome\.google\.com/i.test(ref)) src = 'chrome_store';
+      else if (/(^|\.)google\./i.test(ref)) src = 'google_search';
+      else if (/(^|\.)bing\.com$/i.test(ref)) src = 'bing_search';
+      else if (/facebook|instagram|fb\.com/i.test(ref)) src = 'meta_organic';
+      else if (ref) src = 'referral';
+      else src = 'direct';
+      return { signup_source: src, signup_ref: ref.slice(0, 120) || null, signup_landing: (t.page || location.pathname).slice(0, 120) };
+    } catch (e) { return {}; }
+  }
+
   function fail(text) { var m = $('msg'); m.className = 'msg err'; m.textContent = text; }
 
   $('f').addEventListener('submit', function (e) {
@@ -298,7 +340,7 @@ fbq('track', 'PageView');
     fetch(SUPABASE_URL + '/auth/v1/signup?redirect_to=' + encodeURIComponent(REDIRECT), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'apikey': ANON, 'Authorization': 'Bearer ' + ANON },
-      body: JSON.stringify({ email: em, password: pw, data: { first_name: fn, last_name: ln } })
+      body: JSON.stringify({ email: em, password: pw, data: Object.assign({ first_name: fn, last_name: ln }, signupSource()) })
     }).then(function (r) { return r.json().then(function (j) { return { ok: r.ok, status: r.status, j: j }; }); })
       .then(function (res) {
         btn.disabled = false; btn.textContent = 'Start 14-day free trial';

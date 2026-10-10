@@ -338,6 +338,19 @@ fbq('track', 'PageView');
     .cta-row .btn { flex: 1 1 100%; }
   }
 </style>
+<script>
+/* Margenos: remember how this visitor first arrived (ad click, extension,
+   another site), so the signup can record where new customers come from. */
+(function(){try{
+  var k='mg_src', q=location.search, s=null;
+  try{ s=JSON.parse(localStorage.getItem(k)||'null'); }catch(e){}
+  var tagged=/[?&](fbclid|gclid|ttclid|utm_source|from)=/.test(q);
+  if(s && !tagged) return;
+  var h=''; try{ h=document.referrer?new URL(document.referrer).hostname:''; }catch(e){}
+  if(/(^|\.)margenos\.com$/.test(h)) h='';
+  localStorage.setItem(k, JSON.stringify({ q:q.slice(0,400), ref:h, page:location.pathname, at:new Date().toISOString() }));
+}catch(e){}})();
+</script>
 </head>
 <body>
 
