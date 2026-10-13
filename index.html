@@ -1091,10 +1091,10 @@ fbq('track', 'PageView');
   (function () {
     var ua = navigator.userAgent || '';
     var android = /Android/i.test(ua), ios = /iPhone|iPad|iPod/i.test(ua);
-    if (!android && !ios) return;
+    if (!android) return;
     document.querySelectorAll('a[data-cta="install"]').forEach(function (a) {
       if (android) { a.href = 'https://play.google.com/store/apps/details?id=com.margenos.app'; a.textContent = 'Get the free Android app'; }
-      else { a.href = '/chrome/'; a.removeAttribute('target'); a.textContent = 'Get it for your computer'; }
+      // iPhone: straight to the Chrome Web Store, same as a computer (no iOS app yet).
     });
   })();
 </script>
