@@ -1086,14 +1086,15 @@ fbq('track', 'PageView');
 <script src="/assets/help-chat.js" defer></script>
 <script>
   // Install buttons: computers go to the Chrome Web Store, Android phones to Google Play,
-  // iPhones (no iOS app yet) to the account signup.
+  // iPhones (no iOS app yet) to a page that sends the Chrome link to their computer —
+  // creating an account on a phone with nothing to use it in lost almost everyone.
   (function () {
     var ua = navigator.userAgent || '';
     var android = /Android/i.test(ua), ios = /iPhone|iPad|iPod/i.test(ua);
     if (!android && !ios) return;
     document.querySelectorAll('a[data-cta="install"]').forEach(function (a) {
       if (android) { a.href = 'https://play.google.com/store/apps/details?id=com.margenos.app'; a.textContent = 'Get the free Android app'; }
-      else { a.href = '/signup/'; a.removeAttribute('target'); a.textContent = 'Start 14-day free trial'; }
+      else { a.href = '/chrome/'; a.removeAttribute('target'); a.textContent = 'Get it for your computer'; }
     });
   })();
 </script>

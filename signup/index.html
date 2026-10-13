@@ -213,7 +213,7 @@ fbq('track', 'PageView');
       <p class="fine" style="margin-top:12px">Card required. You won't be charged until the trial ends, and you can cancel before then. Founding-member code <b>FOUNDER100</b> takes $10 off Plus or Elite for life. Enter it on the next page.</p>
     </div>
   </form>
-  <a class="skip" href="#" id="skipTrial">Skip for now — I'll start my trial in the extension</a>
+  <a class="skip" href="#" id="skipTrial" hidden>Skip for now — I'll start my trial in the extension</a>
 </section>
 
 <section id="doneView" class="hidden">
@@ -280,6 +280,12 @@ fbq('track', 'PageView');
   // Landing back from the confirmation email.
   var hash = new URLSearchParams(location.hash.replace(/^#/, ''));
   var query = new URLSearchParams(location.search);
+  // An iPhone with nothing to confirm or pay for: there is no iOS app yet and the
+  // extension needs a computer, so an account made here was a dead end. Send them
+  // to the page that gets the Chrome link onto their computer instead.
+  if (/iPhone|iPad|iPod/i.test(navigator.userAgent || '') && !location.hash && !location.search) {
+    location.replace('/chrome/');
+  }
   // Opened by the extension right after install: it's already in Chrome, so hide the Add to Chrome buttons.
   if (query.get('from') === 'extension') { document.querySelectorAll('.btn2').forEach(function (b) { b.style.display = 'none'; }); }
   if (hash.get('error') || query.get('error')) {
