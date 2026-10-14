@@ -39,7 +39,7 @@ fbq('track', 'PageView');
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Create your account · Margenos</title>
-<meta name="description" content="Create your free Margenos account and start a 14-day free trial of the Walmart seller profit tool for Chrome.">
+<meta name="description" content="Start your 14-day free trial of the Walmart seller profit tool for Chrome.">
 <style>
   :root { color-scheme: light dark; }
   * { box-sizing: border-box; }
@@ -152,7 +152,7 @@ fbq('track', 'PageView');
 
 <section id="formView">
   <h1>See your real Walmart profit</h1>
-  <p class="sub">Create your free account in 20 seconds. One account works in the Chrome extension and the phone app.</p>
+  <p class="sub">Start your 14-day free trial in 20 seconds. One account works in the Chrome extension and the Android app on Google Play.</p>
   <form class="card" id="f" novalidate>
     <label for="fn">First name</label><input id="fn" type="text" autocomplete="given-name" required>
     <input id="ln" type="hidden" value="">
@@ -161,8 +161,8 @@ fbq('track', 'PageView');
     <label for="pw">Password</label>
     <input id="pw" type="password" autocomplete="new-password" minlength="8" required placeholder="At least 8 characters">
     <input id="ok" type="checkbox" checked hidden>
-    <button id="go" type="submit">Create my free account</button>
-    <p class="fine" style="margin:10px 0 0;text-align:center">By signing up you agree to the <a href="/terms/" target="_blank">Terms</a> and <a href="/privacy/" target="_blank">Privacy Policy</a>. No card needed to create your account.</p>
+    <button id="go" type="submit">Start my 14-day free trial</button>
+    <p class="fine" style="margin:10px 0 0;text-align:center">By signing up you agree to the <a href="/terms/" target="_blank">Terms</a> and <a href="/privacy/" target="_blank">Privacy Policy</a>. Cancel anytime during your trial.</p>
     <div class="msg" id="msg" role="alert"></div>
   </form>
   <p class="fine">Already have an account? Open the Margenos extension and log in.</p>
@@ -348,7 +348,7 @@ fbq('track', 'PageView');
       body: JSON.stringify({ email: em, password: pw, data: Object.assign({ first_name: fn, last_name: ln }, signupSource()) })
     }).then(function (r) { return r.json().then(function (j) { return { ok: r.ok, status: r.status, j: j }; }); })
       .then(function (res) {
-        btn.disabled = false; btn.textContent = 'Create my free account';
+        btn.disabled = false; btn.textContent = 'Start my 14-day free trial';
         var j = res.j || {};
         var text = (j.msg || j.error_description || j.message || '').toString();
         if (!res.ok) {
@@ -378,7 +378,7 @@ fbq('track', 'PageView');
         else { show('doneView'); }
       })
       .catch(function () {
-        btn.disabled = false; btn.textContent = 'Create my free account';
+        btn.disabled = false; btn.textContent = 'Start my 14-day free trial';
         fail('Could not reach the server. Check your connection and try again.');
       });
   });
