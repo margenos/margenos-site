@@ -437,11 +437,13 @@ fbq('track', 'PageView');
     var picked = document.querySelector('input[name=plan]:checked');
     var plan = picked ? picked.value : 'plus';
     if (!TOKEN) return show('readyView');
+    // Meta's browser cookies ride along so the trial and payment events can be matched to the ad click.
+    var metaCookie = function (n) { var m = document.cookie.match(new RegExp('(?:^|; )' + n + '=([^;]*)')); return m ? decodeURIComponent(m[1]) : ''; };
     var btn = $('trialGo'); btn.disabled = true; btn.textContent = 'Opening secure checkout…';
     fetch(API + '/api/billing/checkout', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + TOKEN },
-      body: JSON.stringify({ plan: plan, interval: 'month', returnTo: 'web' })
+      body: JSON.stringify({ plan: plan, interval: 'month', returnTo: 'web', fbp: metaCookie('_fbp'), fbc: metaCookie('_fbc') })
     }).then(function (r) { return r.json().then(function (j) { return { status: r.status, j: j || {} }; }); })
       .then(function (res) {
         if (res.j.success && res.j.url) {
