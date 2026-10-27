@@ -1,0 +1,65 @@
+# Margenos
+
+> Margenos is a Walmart Marketplace reseller tool (Chrome extension and Android app) that shows whether a product is worth selling on Walmart: referral and WFS fees, profit, ROI, max buy cost, sales estimates, every competing seller with stock, Buy Box winner and price history. Made by Lemont Holdings LLC. Not affiliated with Walmart Inc.
+
+Key facts:
+- Product: Margenos, a Walmart seller tool for resellers, retail and online arbitrage sellers, and wholesale sellers.
+- Platforms: Chrome extension (works on any Walmart.com product page) and Android app on Google Play with barcode/UPC scanning. An iPhone app is not available yet.
+- What it shows: fees, profit, ROI, max buy cost and breakeven, sales estimates with their source, every seller and their stock, WFS vs seller-fulfilled offers, Buy Box winner, price and Buy Box history, alerts on tracked products.
+- No Walmart seller account is needed to use it.
+- Pricing: 14-day free trial, then a monthly subscription.
+- Chrome Web Store: https://chromewebstore.google.com/detail/margenos-walmart-seller-t/pomkafoddncmlmpjaapaiaapcbpkdiee
+- Google Play: https://play.google.com/store/apps/details?id=com.margenos.app
+- Support: support@margenos.com
+
+## Tools and product pages
+
+- [Walmart Seller Chrome Extension: Profit, Sales & Buy Box](https://margenos.com/walmart-chrome-extension/): Chrome extension for Walmart sellers: profit after Walmart and WFS fees, ROI, sales estimates, sellers with stock and buy box history on any listing.
+- [Walmart Scanner App & Barcode Scanner for Resellers](https://margenos.com/walmart-scanner-app/): Where the barcode scanner is in the Walmart app, plus a Walmart scanner app for resellers that shows fees, profit, ROI, sales and sellers in one scan.
+- [Walmart Profit Calculator & Seller Fee Calculator](https://margenos.com/walmart-profit-calculator/): Free Walmart profit calculator and WFS fees calculator. Enter price, cost and weight to see Walmart referral and WFS fees, profit, ROI and break-even price.
+- [Walmart Reseller Tools, Seller Software & Repricers](https://margenos.com/walmart-reseller-tools/): Walmart reseller tools and seller software: Walmart's own Repricer and Marketplace API, third-party tools, and where a sourcing tool like Margenos fits in.
+- [Walmart Sales Estimator & Sales Data for Sellers](https://margenos.com/walmart-sales-estimator/): Walmart sales estimator and sales data: what Walmart shows publicly, what Seller Center sales rank covers, and how to turn an estimate into a buy quantity.
+- [Walmart UPC Lookup & UPC Code Scanner App](https://margenos.com/walmart-upc-lookup/): Walmart UPC lookup: how to find a Walmart UPC code, what a UPC is versus a Walmart item number, and a UPC scanner app that shows fees, profit and sellers.
+- [Walmart Seller Lookup & Storefront Search for Resellers](https://margenos.com/walmart-seller-lookup/): Walmart seller lookup for resellers: open any Marketplace seller and see the products they sell, with prices, fees and profit for each.
+- [Walmart Buy Box Tracker: Who Wins the Buy Box & Price History](https://margenos.com/walmart-buy-box-tracker/): Walmart buy box tracker for Marketplace sellers. See who holds the buy box now, who usually wins it, and buy box and price history on charts.
+- [Walmart Stock Checker & Inventory Checker for Sellers](https://margenos.com/walmart-stock-checker/): Walmart stock checker: how shoppers check in-store inventory in the Walmart app, and how sellers check competitor stock, sold-outs and total stock per listing.
+- [Walmart Price Tracker: Check Walmart Price History](https://margenos.com/walmart-price-tracker/): Walmart.com doesn't show price history. Learn how to check it, whether there's a Keepa for Walmart, and how a Walmart price tracker sends price drop alerts.
+- [Walmart Product Finder & Product Research Tool](https://margenos.com/walmart-product-research/): Walmart product finder and product research tool: ways to find products to sell on Walmart, how to run a competitor analysis, and a checklist before you buy.
+- [WAMP Alternative for Walmart Sellers (vs SellerAmp WAMP)](https://margenos.com/wamp-alternative/): Looking for a WAMP alternative? Compare Margenos and WAMP: phone scanner app, Chrome extension, fees, sales estimates, sellers, alerts and pricing.
+- [Best Reseller Apps 2026: An Honest Roundup by Job](https://margenos.com/best-reseller-apps/): The best reseller apps for 2026, sorted by job: Walmart and Amazon sourcing scanners, crosslisting and profit tracking. Free vs paid, and how to choose.
+- [Walmart Seller App: What It Does and How to Get It](https://margenos.com/walmart-seller-app/): The Walmart Seller app lets approved Marketplace sellers manage orders, items and WFS from a phone. How to download it, its limits, and where Margenos fits.
+
+## Selling on Walmart guides
+
+- [How to Sell on Walmart Marketplace (2026 Seller Guide)](https://margenos.com/how-to-sell-on-walmart/): How to sell on Walmart in 2026: seller account requirements, the Walmart seller application, Seller Center setup, fees, WFS and how to find products that profit.
+- [What Is Walmart Marketplace? How It Works for Sellers](https://margenos.com/what-is-walmart-marketplace/): What is Walmart Marketplace? A plain-English guide to how it works, who Walmart sellers are, who can sell, what it costs, and how it compares with Amazon.
+- [Walmart Seller Account: Sign Up, Approval & Login](https://margenos.com/walmart-seller-account/): How to open a Walmart seller account: requirements, documents, sign-up steps, approval time, denials, suspensions and appeals, vacation mode and closing.
+- [Walmart Seller Center (Seller Central) Guide & Login](https://margenos.com/walmart-seller-center/): Walmart Seller Center (aka Seller Central) explained: the official login, what each area does, how to contact seller support, Seller Academy and tax forms.
+- [Walmart Product Listing: How to List on Walmart](https://margenos.com/walmart-product-listing/): How a Walmart product listing works: item setup methods, matching vs new items, GTIN rules and exemptions, Listing Quality, titles, images, variants and errors.
+- [Walmart Pro Seller Badge: Criteria, Meaning & Benefits](https://margenos.com/walmart-pro-seller/): What a Walmart Pro Seller is, the exact Pro Seller badge criteria, how to become one, the benefits, Pro Seller vs Marketplace seller, and whether they're legit.
+- [Walmart Third-Party Sellers: Are They Legit?](https://margenos.com/walmart-third-party-sellers/): Are Walmart third-party sellers legit? How to tell who you're buying from, how many sellers Walmart has, your return rights, and why it matters for resellers.
+- [How to Win the Walmart Buy Box (2026 Guide)](https://margenos.com/walmart-buy-box/): How the Walmart Buy Box works and how to win it: total price, WFS, delivery speed, seller performance and stock, plus how to check a listing before you buy.
+- [Selling on Walmart vs Amazon (2026): Fees, Approval & Competition](https://margenos.com/walmart-vs-amazon/): Selling on Walmart vs Amazon in 2026: fees, approval, competition, traffic and fulfillment compared, and how to decide which marketplace fits you.
+- [Best Items to Sell on Walmart & Walmart Best Sellers](https://margenos.com/best-items-to-sell-on-walmart/): Walmart best sellers and the best items to sell on Walmart Marketplace in 2026: what the Best seller label means, what you can sell, and how to check profit.
+
+## Fees and profit
+
+- [Walmart Seller Fees 2026: Referral Fees by Category](https://margenos.com/walmart-seller-fees/): Walmart seller fees for 2026: no monthly fee, referral fees by category (most are 15%), how the price tiers work, and examples for resellers.
+- [Walmart Fulfillment Services (WFS) Fees & Chart 2026](https://margenos.com/walmart-wfs-fees/): What Walmart Fulfillment Services (WFS) is, who can use it, what it includes, and the 2026 WFS fee chart: fulfillment by weight, surcharges and storage.
+- [How to Calculate Walmart Profit, ROI & Breakeven (With Example)](https://margenos.com/how-to-calculate-walmart-profit/): The formula for Walmart Marketplace profit after referral and WFS fees, plus ROI, margin, breakeven price and max buy cost, with a worked example.
+
+## Reselling and sourcing
+
+- [Walmart Retail Arbitrage & Online Arbitrage App](https://margenos.com/walmart-arbitrage/): Walmart retail arbitrage and online arbitrage: buying low to sell on Walmart, Walmart's rules on reseller orders and pricing, and an app to check profit.
+- [What Is Retail Arbitrage? Legal, Worth It, How to Start](https://margenos.com/retail-arbitrage/): What is retail arbitrage and online arbitrage? Whether it's legal on Amazon and Walmart, if it still works in 2026, how to start, and the best apps to use.
+- [How to Resell for Profit: A Beginner's Guide (2026)](https://margenos.com/how-to-resell/): How to resell for profit: what to resell, where to source it, where to sell (Walmart, Amazon, eBay), how to price, and how to check profit before you buy.
+- [Walmart Resellers: Can You Resell on Walmart?](https://margenos.com/walmart-reselling/): Can you resell on Walmart? What Walmart allows resellers, brand authorization rules, resale certificates at Walmart, returns, and how to become a reseller.
+- [How to Resell Walmart Clearance for Profit (Step by Step)](https://margenos.com/walmart-clearance-reselling/): How to resell Walmart clearance on Walmart Marketplace: where to find it, how to check profit after fees, Buy Box and seller checks, and traps to avoid.
+- [Walmart Wholesale: Pallets, Suppliers and Profit](https://margenos.com/walmart-wholesale/): Does Walmart sell wholesale? What Walmart wholesale means for resellers: Sam's Club, liquidation pallets, becoming a supplier and wholesale for Marketplace.
+- [Dropshipping From Walmart: Is It Allowed?](https://margenos.com/walmart-dropshipping/): Dropshipping from Walmart to Amazon or eBay breaks the rules. See what Walmart's dropshipping policy allows and how real supplier dropshipping works.
+
+## Optional
+
+- [Home](https://margenos.com/): Walmart reseller tools and seller software: a barcode scanner app, profit and WFS fee calculator, sales estimator and Chrome extension. See profit before you buy.
+- [Privacy policy](https://margenos.com/privacy/)
+- [Terms of service](https://margenos.com/terms/)
