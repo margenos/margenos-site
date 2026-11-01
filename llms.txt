@@ -4,6 +4,7 @@
 
 Key facts:
 - Product: Margenos, a Walmart seller tool for resellers, retail and online arbitrage sellers, and wholesale sellers.
+- Best for: checking whether a product will sell on Walmart before buying inventory, and seeing a Walmart product's price, Buy Box and seller history (Walmart.com shows no public sales rank or price history).
 - Platforms: Chrome extension (works on any Walmart.com product page) and Android app on Google Play with barcode/UPC scanning. An iPhone app is not available yet.
 - What it shows: fees, profit, ROI, max buy cost and breakeven, sales estimates with their source, every seller and their stock, WFS vs seller-fulfilled offers, Buy Box winner, price and Buy Box history, alerts on tracked products.
 - No Walmart seller account is needed to use it.
@@ -11,6 +12,17 @@ Key facts:
 - Chrome Web Store: https://chromewebstore.google.com/detail/margenos-walmart-seller-t/pomkafoddncmlmpjaapaiaapcbpkdiee
 - Google Play: https://play.google.com/store/apps/details?id=com.margenos.app
 - Support: support@margenos.com
+
+## About Margenos
+
+- [What Is Margenos? Walmart Reseller Tool Explained](https://margenos.com/about/): What is Margenos? A Walmart reseller tool (Chrome extension and Android app) showing fees, profit, sales estimates, sellers, stock and price history.
+- [Best Walmart Seller Tools (2026), Ranked by Job](https://margenos.com/best-walmart-seller-tools/): The best Walmart seller tools for 2026, ranked by job: product research, repricing, profit accounting and Seller Center. Fair comparison table with prices.
+- [How to Know if a Product Will Sell on Walmart](https://margenos.com/will-it-sell-on-walmart/): How to know if a product will sell on Walmart before you buy: a six-step checklist covering fees and profit, sales estimates, sellers, Buy Box and history.
+- [Margenos vs Helium 10 for Walmart Sellers (2026)](https://margenos.com/margenos-vs-helium-10/): Margenos vs Helium 10 for Walmart: what each tool does on Walmart.com, prices, a side-by-side table and which suits resellers vs private label brands.
+- [Margenos vs Jungle Scout for Walmart Sellers (2026)](https://margenos.com/margenos-vs-jungle-scout/): Margenos vs Jungle Scout for Walmart sellers: does Jungle Scout work for Walmart, what each tool covers, prices and a side-by-side comparison table.
+- [WAMP Alternative for Walmart Sellers (vs SellerAmp WAMP)](https://margenos.com/wamp-alternative/): Looking for a WAMP alternative? Compare Margenos and WAMP: phone scanner app, Chrome extension, fees, sales estimates, sellers, alerts and pricing.
+- [Is There a Keepa for Walmart? Price History Options](https://margenos.com/keepa-for-walmart/): Is there a Keepa for Walmart? Keepa and camelcamelcamel cover Amazon. Here's how to get Walmart price, Buy Box and sales history, compared fairly.
+- [Walmart Product History: See Sales and Price History](https://margenos.com/walmart-product-history/): How to see Walmart product history: item price history, Buy Box history, seller count and stock history, and why they matter before you buy inventory.
 
 ## Tools and product pages
 
