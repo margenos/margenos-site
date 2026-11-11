@@ -30,6 +30,12 @@ fbq('track', 'PageView');
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'AW-18477315728');
+  gtag('config', 'G-QR0XW0PXDG');
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href*="chromewebstore.google.com"],a[href*="play.google.com/store/apps/details?id=com.margenos"],a[href*="/signup"]');
+    if (!a) return;
+    gtag('event', 'trial_click', {link_url: a.href, cta: a.getAttribute('data-cta') || '', page_path: location.pathname});
+  }, true);
   document.addEventListener('click', function (e) {
     var link = e.target.closest && e.target.closest('a[href*="chromewebstore.google.com"]');
     if (!link) return;
@@ -87,7 +93,7 @@ fbq('track', 'PageView');
 </ul>
 
 <h2>Step 2: Find clearance</h2>
-<p>In stores, check end caps, clearance aisles and seasonal sections, especially right after holidays. Online, sort categories by price and look for items priced well below what other sellers charge. Toys, home goods, beauty and seasonal items are common clearance categories.</p>
+<p>In stores, check end caps, clearance aisles and seasonal sections, especially right after holidays. Online, sort categories by price and look for items priced well below what other sellers charge. Toys, home goods, beauty and seasonal items are common clearance categories. More on finding unmarked deals: <a href="/walmart-hidden-clearance/">Walmart hidden clearance</a> and <a href="/walmart-penny-items/">Walmart penny items</a>.</p>
 
 <h2>Step 3: Scan and check the numbers</h2>
 <p>For every item, check four things before it goes in your cart:</p>
@@ -106,7 +112,7 @@ fbq('track', 'PageView');
 <p>If you use WFS, follow Walmart's packaging and labeling rules. Walmart charges <b>$0.65</b> per unit to fix a missing or wrong label and <b>$0.80</b> for a missing or wrong poly bag. Check the <a href="/walmart-wfs-fees/">WFS fee chart</a> so the fulfillment fee is already in your math.</p>
 
 <h2>Example</h2>
-<p>A toy is on clearance for <b>$10.00</b> and sells on Walmart.com for <b>$24.97</b>. After the 15% referral fee ($3.75), WFS fulfillment ($4.95) and a month of storage ($0.08), you keep <b>$6.19</b> per unit, a 62% ROI. At $13.00 on the shelf, it would only make about $3.19, and above $16.19 you'd lose money.</p>
+<p>A toy is on clearance for <b>$10.00</b> and sells on Walmart.com for <b>$24.97</b>. After the 15% referral fee ($3.75), WFS fulfillment ($4.95 for a 2 lb shipping weight) and a month of storage ($0.08), you keep <b>$6.19</b> per unit, a 62% ROI. At $13.00 on the shelf, it would only make about $3.19, and above $16.19 you'd lose money.</p>
 <p>The <a href="/walmart-scanner-app/">Margenos scanner app</a> shows these numbers when you scan a barcode in the store, and the <a href="/walmart-chrome-extension/">Chrome extension</a> shows them on Walmart.com listings.</p>
 <p class="src muted">Fee sources: Walmart Marketplace <a href="https://marketplace.walmart.com/pricing/" rel="nofollow noopener" target="_blank">referral fees</a> and <a href="https://marketplacelearn.walmart.com/guides/Shipping%20&%20fulfillment/Walmart%20Fulfillment%20Services%20(WFS)/WFS-fees" rel="nofollow noopener" target="_blank">WFS fees</a>. This is general information, not tax or legal advice.</p>
 </div></section>

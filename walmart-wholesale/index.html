@@ -30,6 +30,12 @@ fbq('track', 'PageView');
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'AW-18477315728');
+  gtag('config', 'G-QR0XW0PXDG');
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href*="chromewebstore.google.com"],a[href*="play.google.com/store/apps/details?id=com.margenos"],a[href*="/signup"]');
+    if (!a) return;
+    gtag('event', 'trial_click', {link_url: a.href, cta: a.getAttribute('data-cta') || '', page_path: location.pathname});
+  }, true);
   document.addEventListener('click', function (e) {
     var link = e.target.closest && e.target.closest('a[href*="chromewebstore.google.com"]');
     if (!link) return;
@@ -96,7 +102,7 @@ fbq('track', 'PageView');
 <p>Buying Walmart's retail or clearance stock to resell is <a href="/walmart-arbitrage/">arbitrage</a>, not wholesale. It can work on clearance markdowns (see <a href="/walmart-clearance-reselling/">how to resell Walmart clearance</a>), but you're buying one item at a time at retail-level prices.</p>
 
 <h2>Walmart wholesale pallets and liquidation</h2>
-<p><b>Walmart wholesale pallets</b> almost always means liquidation. Walmart sells excess inventory, store returns and refurbished goods through <b>Walmart Liquidation Auctions</b>, part of the B-Stock Sourcing Network. Lots range from single pallets to truckloads and are usually well below retail. Buying is limited to approved B-Stock buyers.</p>
+<p><b>Walmart wholesale pallets</b> almost always means liquidation. Walmart sells excess inventory, store returns and refurbished goods through <b>Walmart Liquidation Auctions</b>, part of the B-Stock Sourcing Network. Lots range from single pallets to truckloads and are usually well below retail. Buying is limited to approved B-Stock buyers. For where to buy them, lot types and how to check resale value, see our full guide to <a href="/walmart-liquidation-pallets/">Walmart liquidation pallets</a>.</p>
 <p>Before you bid, know what you're getting:</p>
 <ul class="check">
 <li><b>Condition varies.</b> Returns can be used, damaged or missing parts. Budget for testing, cleaning and items you can't sell.</li>

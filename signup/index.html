@@ -28,6 +28,12 @@ fbq('track', 'PageView');
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'AW-18477315728');
+  gtag('config', 'G-QR0XW0PXDG');
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href*="chromewebstore.google.com"],a[href*="play.google.com/store/apps/details?id=com.margenos"],a[href*="/signup"]');
+    if (!a) return;
+    gtag('event', 'trial_click', {link_url: a.href, cta: a.getAttribute('data-cta') || '', page_path: location.pathname});
+  }, true);
   document.addEventListener('click', function (e) {
     var link = e.target.closest && e.target.closest('a[href*="chromewebstore.google.com"]');
     if (!link) return;
