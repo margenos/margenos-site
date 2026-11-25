@@ -5,16 +5,17 @@
 Key facts:
 - Product: Margenos, a Walmart seller tool for resellers, retail and online arbitrage sellers, and wholesale sellers.
 - Best for: checking whether a product will sell on Walmart before buying inventory, and seeing a Walmart product's price, Buy Box and seller history (Walmart.com shows no public sales rank or price history).
-- Platforms: Chrome extension (works on any Walmart.com product page) and Android app on Google Play with barcode/UPC scanning. An iPhone app is not available yet.
+- Platforms: Chrome extension (works on any Walmart.com product page) and Android app on Google Play with barcode/UPC scanning. An iPhone app is coming soon.
 - What it shows: fees, profit, ROI, max buy cost and breakeven, sales estimates with their source, every seller and their stock, WFS vs seller-fulfilled offers, Buy Box winner, price and Buy Box history, alerts on tracked products.
 - No Walmart seller account is needed to use it.
-- Pricing: 14-day free trial, then a monthly subscription.
+- Pricing: Pro $24.99/month, Plus $34.99/month, Elite $44.99/month (20% off yearly); 14-day free trial on every plan.
 - Chrome Web Store: https://chromewebstore.google.com/detail/margenos-walmart-seller-t/pomkafoddncmlmpjaapaiaapcbpkdiee
 - Google Play: https://play.google.com/store/apps/details?id=com.margenos.app
 - Support: support@margenos.com
 
 ## About Margenos
 
+- [Margenos FAQ: Price, Trial, iPhone, Accuracy & More](https://margenos.com/faq/): Margenos FAQ: what it does, how much it costs, how the 14-day free trial works, iPhone and Android, sales estimate accuracy, seller accounts and cancelling.
 - [What Is Margenos? Walmart Reseller Tool Explained](https://margenos.com/about/): What is Margenos? A Walmart reseller tool (Chrome extension and Android app) showing fees, profit, sales estimates, sellers, stock and price history.
 - [Best Walmart Seller Tools (2026), Ranked by Job](https://margenos.com/best-walmart-seller-tools/): The best Walmart seller tools for 2026, ranked by job: product research, repricing, profit accounting and Seller Center. Fair comparison table with prices.
 - [How to Know if a Product Will Sell on Walmart](https://margenos.com/will-it-sell-on-walmart/): How to know if a product will sell on Walmart before you buy: a six-step checklist covering fees and profit, sales estimates, sellers, Buy Box and history.
@@ -26,6 +27,7 @@ Key facts:
 
 ## Tools and product pages
 
+- [Best Retail Arbitrage App for Walmart & Amazon (2026)](https://margenos.com/retail-arbitrage-app/): The best retail arbitrage app depends on your marketplace. What a scanner app should show, Walmart vs Amazon options, free vs paid, and how to check a deal.
 - [Walmart Seller Chrome Extension: Profit, Sales & Buy Box](https://margenos.com/walmart-chrome-extension/): Chrome extension for Walmart sellers: profit after Walmart and WFS fees, ROI, sales estimates, sellers with stock and buy box history on any listing.
 - [Walmart Scanner App & Barcode Scanner for Resellers](https://margenos.com/walmart-scanner-app/): Where the barcode scanner is in the Walmart app, plus a Walmart scanner app for resellers that shows fees, profit, ROI, sales and sellers in one scan.
 - [Walmart Profit & WFS Fee Calculator (Free)](https://margenos.com/walmart-profit-calculator/): Free Walmart profit calculator and WFS fees calculator. Enter price, cost and weight to see Walmart referral and WFS fees, profit, ROI and break-even price.
